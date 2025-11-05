@@ -1,0 +1,83 @@
+/* Style global de la navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #a3c6ff, #c8fbc8);
+  padding: 10px 30px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Partie gauche : logo + nom */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #004aad;
+}
+
+/* Partie droite : liens forum + boutons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Liens simples */
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #004aad;
+}
+
+/* Boutons */
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+}
+
+.btn-black:hover {
+  background-color: #333;
+}
+
+.btn-green {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #45a049;
+}
+
+.btn-red {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: #c0392b;
+}
