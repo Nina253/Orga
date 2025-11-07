@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php include "navbar.php" ?>
+    <h1>Bienvenue sur le forum</h1>
     
 </body>
 </html>
