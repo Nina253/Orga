@@ -1,10 +1,9 @@
 test anthony
 test nina
 test nina2
+<<<<<<< HEAD
 test anthony
 test anthony
 test anthony
 test nina3
 test john
-john il est chiant
-grave chiant
