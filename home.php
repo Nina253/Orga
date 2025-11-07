@@ -7,14 +7,9 @@
         <title>Orga+</title>
     </head>
     <body>
-    	
-	 <header>
-	 <a href="home.html"><img class="logo" src="images/logo.png" alt="logo" ></a>
-		<a href="forum.php">Forum</a>
-		<a class="bouton_noir" href="connecter.php">Se connecter</a>
-		<a href="profil.php">Profil</a>
 
-	 </header>
+	<?php include "navbar.php" ?>
+
 
 	<h1>Bienvenu dans l'univers Orga+</h1>
 	<div class="conteneur">
