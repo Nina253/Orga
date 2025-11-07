@@ -1,6 +1,7 @@
 test anthony
 test nina
 test nina2
+<<<<<<< HEAD
 test anthony
 test anthony
 test anthony
@@ -8,3 +9,6 @@ test nina3
 test john
 test florient
 ec45bb7 (test)
+test florient
+test 2 flo
+86fcc8b (ajout test)
