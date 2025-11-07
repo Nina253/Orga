@@ -8,13 +8,8 @@
     </head>
     <body>
     	
-	 <header>
-	 <a href="home.php"><img class="logo" src="images/logo.png" alt="logo" ></a>
-		<a href="forum.php">Forum</a>
-		<a class="bouton_noir" href="connecter.php">Se connecter</a>
-		<a href="profil.php">Profil</a>
+    <?php include "navbar.php" ?>
 
-	 </header>
 
 	<h1>Simulateur de performance</h1>
 	<div class="conteneur">

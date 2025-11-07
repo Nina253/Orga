@@ -9,14 +9,8 @@
     </head>
 	<body>
 		
-		
-		<header>
-			<a href="home.php"><img class="logo" src="images/logo.png" alt="logo" ></a>
-			<a href="tableau_de_bord.php">Tableau De Bord</a>
-			<a href="forum.php">Forum</a>
-			<a href="deconnexion.php" class="bouton_noir">Deconnexion</a>
-			
-		</header>
+    <?php include "navbar.php" ?>
+
 
 		<h1>Questionnaire</h1>
 		
