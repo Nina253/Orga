@@ -10,7 +10,7 @@
 
 		
 			
-			<form class="insc" action="nouv.php" method="post">
+			<form class="insc" action="enregistrement.php" method="post">
 				<h2>Créer un compte</h2>
 				Email<br>
 				<input class="barre3" type="text" name="email" placeholder="ex: xyz@gmail.com" required><br>
@@ -28,4 +28,5 @@
 		</footer>
 	</body>
 </html>
+
 
