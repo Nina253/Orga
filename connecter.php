@@ -11,7 +11,7 @@
 		
 		
 		<div>	
-			<form class="insc" action="home.html" method="post">
+			<form class="insc" action="connexion.php" method="post">
 				<h2>Se connecter</h2>
 				Email<br>
 				<input class="barre3" type="text" name="email" placeholder="ex: xyz@gmail.com"required><br>
@@ -31,3 +31,4 @@
 		</footer>
 	</body>
 </html>
+
