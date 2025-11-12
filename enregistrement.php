@@ -2,11 +2,11 @@
 	$mail=$_POST["email"];
 	$mdp=$_POST["mdp"];
 	
-	function enregistrer($num, $mail, $mdp) {
+	function enregistrer($mail, $mdp) {
 		require 'bd.php';
 		$bdd = getBD();
 		
-		$rep = $bdd->prepare("INSERT INTO utilisateurs (nom,prenom,genre,niveau_educ_parents, mail, mdp) VALUES ('','','0001-01-01','','',?,?,?);");
+		$rep = $bdd->prepare("INSERT INTO etudiant (nom,prenom,genre,niveau_educ_parents, mail, mdp) VALUES ('','','','',?,?);");
 		$rep -> execute([$mail,$mdp]);
 	}
 	
@@ -16,3 +16,4 @@
 
 
 ?>
+
