@@ -20,7 +20,14 @@
 				<a class="mdpt" href="mdp_oublie.php">mot de passe oublié ?</a>
 				<button type="submit" class="bouton_noir2">Connexion</button>
 				
+
+				<div class="bloc"> 
+				<a href="inscription.php"> Créer un compte</a>
+			</div>
 			</form>
+
+
+
 		</div>
 		
 		<footer class="pied">
