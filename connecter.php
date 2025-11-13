@@ -15,8 +15,6 @@
 				<h2>Se connecter</h2>
 				Email<br>
 				<input class="barre3" type="text" name="email" placeholder="ex: xyz@gmail.com"required><br>
-				Numéro de téléphone<br>
-				<input class="barre3" type="text" name="num" placeholder="ex: 06 41 41 41 41"required><br>
 				Mot de passe<br>
 				<input class="barre3" type="password" name="mdp" required>
 				<a class="mdpt" href="mdp_oublie.php">mot de passe oublié ?</a>
@@ -31,4 +29,5 @@
 		</footer>
 	</body>
 </html>
+
 
