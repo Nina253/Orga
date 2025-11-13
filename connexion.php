@@ -12,7 +12,7 @@
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
 				$_SESSION['client']=$utl;
-				echo '<meta http-equiv="refresh" content="0;mon_compte.php"/>';
+				echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
 				die;
 			} else{
 				echo '<meta http-equiv="refresh" content="0;connexion.php"/>';
@@ -23,4 +23,5 @@
 			die;
 	}
 ?>
+
 
