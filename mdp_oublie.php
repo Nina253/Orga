@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
@@ -8,10 +11,8 @@
 	<body>
     <?php include "navbar.php" ?>
 
-		
-		
 			
-			<form class="insc" action="connecter.php" method="post">
+			<form class="insc" action="nouvmdp.php" method="post">
 				<h2>Mot de passe oublié</h2>
 				Email<br>
 				<input class="barre4" type="text" name="email" placeholder="ex: xyz@gmail.com"required><br>
@@ -28,4 +29,5 @@
 			<a href="nous.html" >Qui sommes nous</a>
 		</footer>
 	</body>
+
 </html>
