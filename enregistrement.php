@@ -9,7 +9,7 @@
 		require 'bd.php';
 		$bdd = getBD();
 		
-		$rep = $bdd->prepare("INSERT INTO utilisateurs (mail, mdp, num) VALUES (?,?);");
+		$rep = $bdd->prepare("INSERT INTO utilisateurs (nom,prenom,date_naiss,genre,niveau_educ_parents,mail, mdp, num) VALUES ('','','','','0001/01/01',?,?,?);");
 		$rep -> execute([$mail,$mdpC,$num]);
 	}
 	
@@ -19,6 +19,7 @@
 
 
 ?>
+
 
 
 
