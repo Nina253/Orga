@@ -16,11 +16,21 @@ body{
 	
 }
 #liste_sujets{
-  background-color: white;
   margin: 50px;
-  padding: 10px;
+}
+.sujet{
+  margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+  position: relative;
+}
+
+.com{
+  position: absolute;
+  right: 15px;
+      bottom: 15px;
 
 }
 .logo{
