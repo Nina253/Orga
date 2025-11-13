@@ -13,7 +13,7 @@ $base = '/Orga'; // ton dossier racine
 
   </div>
 
-  <div class="nav-right">
+  <div class="nav-droite">
     <?php if (isset($_SESSION['client'])){
       echo '<a href="<?= $base ?>/tableau_bord.php">Tableau de Bord</a>';
       };
@@ -24,8 +24,8 @@ $base = '/Orga'; // ton dossier racine
       <a href="profil.php">Profil</a>
       <a href="<?= $base ?>/compte.php" class="btn btn-green">Mon compte</a>
     <?php else: ?>
-      
-      <a class="bouton_noir" href="<?= $base ?>/connecter.php">Se connecter</a>
+
+      <a class="bloc connexion" href="<?= $base ?>/connecter.php">Se connecter</a>
     <?php endif; ?>
   </div>
 </nav>
