@@ -13,7 +13,7 @@
         ORDER BY s.date_creation DESC";
     $sujets = $bdd->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    ?>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     		<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" > 
@@ -56,24 +56,21 @@ $(document).on('click', '.btn-commenter', function(){
         echo '<a href="nouveau_sujet.php">Nouveau sujet</a>';
     }
     ?>
+
 <div id="liste_sujets">
+
 <?php foreach($sujets as $s): ?>
-<div class="sujet" data-id="<?php= $s['id'] ?>">
-  <h3><?= ($s['titre']) ?></h3>
-  <p><?= nl2br(($s['contenu'])) ?></p>
-  <p>Posté par <?= ($s['prenom']." ".$s['nom']) ?> le <?= $s['date_creation'] ?></p><br>
+<div class="sujet" data-id="<?= $s['id'] ?>">
+    <h3><?= htmlspecialchars($s['titre']) ?></h3>
+  <p><?= htmlspecialchars($s['contenu']) ?></p>
+  <p>Posté par <?= htmlspecialchars($s['prenom']." ".$s['nom']) ?> le <?= $s['date_creation'] ?></p><br>
   <div class="com">
-  <span class="like-btn">❤️</span> <span class="nb-likes"><?= $s['nb_likes'] ?></span> likes 
-  &nbsp; | 💬 <?= $s['nb_com'] ?> commentaires
-</div>
-  <div class="commentaires"></div>
-  <?php if(isset($_SESSION['id_etu'])): ?>
-  <textarea class="commentaire-text" placeholder="Votre commentaire..."></textarea>
-  <button class="btn-commenter">Commenter</button>
-  <?php endif; ?>
+    <span class="like-btn">👍🏻</span> <span class="nb-likes"><?= $s['nb_likes'] ?></span> likes 
+    | 💬 <?= $s['nb_com'] ?> commentaires
+  </div>
+  
 </div>
 <?php endforeach; ?>
-</div>
 
 
 
