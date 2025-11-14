@@ -13,12 +13,13 @@
 		$rep -> execute([$mail,$mdpC,$num]);
 	}
 	
-	enregistrer($mail, $mdp);
+	enregistrer($mail, $mdp,$num);
 	echo '<meta http-equiv="refresh" content="0;home.php"/>';
 
 
 
 ?>
+
 
 
 
