@@ -5,7 +5,7 @@
 
 	$mdpC=password_hash($mdp,PASSWORD_DEFAULT);
 	
-	function enregistrer($mail, $mdp) {
+	function enregistrer($mail, $mdpC, $num) {
 		require 'bd.php';
 		$bdd = getBD();
 		
@@ -13,12 +13,13 @@
 		$rep -> execute([$mail,$mdpC,$num]);
 	}
 	
-	enregistrer($mail, $mdp,$num);
+	enregistrer($mail, $mdpC,$num);
 	echo '<meta http-equiv="refresh" content="0;home.php"/>';
 
 
 
 ?>
+
 
 
 
