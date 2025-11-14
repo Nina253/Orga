@@ -12,10 +12,10 @@
 			$bdd=getBD(); 
 			$rep= $bdd->prepare("SELECT * FROM utilisateurs WHERE mail = ?");
  			$rep->execute([$_SESSION['mail']]);
-			$utl = $rep->fetch();
+			$utl = $rep->fetch(PDO::FETCH_ASSOC);
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
-				$_SESSION['client']= ['id' => $ult['id_user']] ;
+				$_SESSION['client'] = ['id' => $utl['id_user']] ;
 				echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
 				die;
 			} else{

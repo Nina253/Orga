@@ -13,9 +13,32 @@
 </head>
 <body>
      <?php include 'navbar.php' ;?>
+     <div class='haut'>
+        <img class="perso" src="images/perso.jpg" alt="perso">
 
-     <div class='bloc'> <a href="deconnexion.php">Deco</a> </div>
-     <?php echo $_SESSION['client']['id'] ;?>
+     </div>
+     <div class='bas'>
+        <div class='g'>
+                 <div class='bloc'> <a href="deconnexion.php">Deconnexion</a> </div>
+                <div class='bloc'> <a href="profil.php">Profil</a> </div>
+
+
+        </div>
+        <div class='d'>
+
+
+        </div>
+
+
+
+
+     </div>
+
+
+
+           
+
+     <?php echo $_SESSION['client']['id'];?>
 
 
 </body>

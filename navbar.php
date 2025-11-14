@@ -22,7 +22,6 @@ $base = '/Orga';
     <a href="<?= $base ?>/forum.php">Forum</a>
 
     <?php if (isset($_SESSION['client'])): ?>
-      <a href="profil.php">Profil</a>
       <a href="<?= $base ?>/compte.php" class="btn btn-green">Mon compte</a>
     <?php else: ?>
 
