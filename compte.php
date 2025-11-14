@@ -24,12 +24,12 @@
     <div class="content">
 
         <div class="left">
-            <div class='bloc'> Accéder à mon tableau de bord
-            <button>Faire le questionnaire</button>
-            <button>Accéder à mon calendrier</button>
-            <button>Accéder au forum</button>
+            <div class='bloc'>  <a href="tableau_bord.php">Accéder à mon tableau de bord</a> </div>
+            <div class='bloc'>  <a href="questionnaire.php">Faire le questionnaire</a> </div>
+            <div class='bloc'>  <a href="calendrier.php">Accéder à mon calendrier</a> </div>
+            <div class='bloc'>  <a href="forum.php">Accéder au forum</a> </div>
             <button>Accéder à mes articles publiés dans le forum</button>
-            <button>Accéder / Modifier mes données personnelles</button>
+            <div class='bloc'>  <a href="profile.php">Accéder / Modifier mes données personnelles</a> </div>
         </div>
 
         <div class="right">

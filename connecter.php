@@ -26,8 +26,6 @@
 			</div>
 			</form>
 
-
-
 		</div>
 		
 		<footer class="pied">
