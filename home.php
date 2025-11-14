@@ -10,7 +10,7 @@
     <?php include "navbar.php" ?>
 
 
-	<h1>Bienvenu dans l'univers Orga+</h1>
+	<h1>Bienvenue dans l'univers Orga+</h1>
 	<div class="conteneur">
 	<div class="text">
 	<h3>Ton guide pour mieux t’organiser et réussir</h3>
@@ -32,7 +32,7 @@ C’est l’endroit idéal pour obtenir une aide complémentaire, trouver de la 
 	<footer>
 	<img class="logo" src="images/logo.png" alt="logo" >
 	
-	<a href="nous.html" >Qui sommes nous</a>
+	<a href="nous.php" >Qui sommes-nous ?</a>
 	</footer>
     </body>
 </html>
