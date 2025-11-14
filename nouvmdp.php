@@ -1,9 +1,11 @@
 <?php 
 	session_start();
 	
-	$Nmdp=$_POST['mdp'];
-	$NmdpC=password_hash($Nmdp,PASSWORD_DEFAULT);
-	require "bd.php";
+	$Nmdp=$_POST['mdp1'];
+	$Nmdp2=$_POST['mdp2'];
+	if($Nmdp==$Nmdp2){
+		$NmdpC=password_hash($Nmdp,PASSWORD_DEFAULT);
+		require "bd.php";
 		$bdd=getBD(); 
 		$rep= $bdd->prepare("SELECT * FROM utilisateurs WHERE mail = ?");
 		$rep->execute([$_SESSION['mail']]);
@@ -16,4 +18,8 @@
 			echo '<meta http-equiv="refresh" content="0;connecter.php"/>';
 			
 		}
+	} else {
+		echo '<meta http-equiv="refresh" content="0;mdp_oublie.php"/>';
+	}
+	
 ?>
