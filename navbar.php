@@ -1,6 +1,6 @@
 <?php
 session_start();
-$base = '/Orga'; // ton dossier racine
+$base = '/Orga';
 ?>
 
 <nav class="navbar">
@@ -14,14 +14,14 @@ $base = '/Orga'; // ton dossier racine
   </div>
 
   <div class="nav-droite">
-    <?php if (isset($_SESSION['client'])){
-      echo '<a href="<?= $base ?>/tableau_bord.php">Tableau de Bord</a>';
-      };
+    <?php if (isset($_SESSION['client'])){ ?>
+      <a href="<?= $base ?>/tableau_bord.php">Tableau de Bord</a>
+      <?php
+    };
     ?>
     <a href="<?= $base ?>/forum.php">Forum</a>
 
     <?php if (isset($_SESSION['client'])): ?>
-      <a href="profil.php">Profil</a>
       <a href="<?= $base ?>/compte.php" class="btn btn-green">Mon compte</a>
     <?php else: ?>
 
