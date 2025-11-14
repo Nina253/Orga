@@ -15,7 +15,7 @@
 			$utl = $rep->fetch();
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
-				$_SESSION['client']=$utl;
+				$_SESSION['client']= ['id' => $ult['id_user']] ;
 				echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
 				die;
 			} else{

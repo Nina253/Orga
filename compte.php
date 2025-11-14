@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,5 +13,10 @@
 </head>
 <body>
      <?php include 'navbar.php' ;?>
+
+     <div class='bloc'> <a href="deconnexion.php">Deco</a> </div>
+     <?php echo $_SESSION['client']['id'] ;?>
+
+
 </body>
 </html>
