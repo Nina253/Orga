@@ -19,7 +19,7 @@
     <script>
     let validTitre = false;
     let validText=false;
-    $(document).ready(function()){
+    $(document).ready(function(){
         function validationTitre(val){
             val=val.trim();
             return typeof val=="string" && val.length>1;
@@ -28,9 +28,38 @@
             val=val.trim();
             return typeof val=="string" && val.length>20;
         }
-    }
+        function affichageReponse($input,valide,message){
+				let $reponse = $input.next('.msg');
+				if ($reponse.length == 0) {
+    	    		$reponse = $('<div class="msg"></div>');
+        			$input.after($reponse);
+    			}
+				if (!valide) {
+    	    		$input.css('background-color', '#E38686');
+       				$reponse.text(message).css({'color': '#E38686','font-size': '12px','margin-top': '2px'});
+    			} 
+    			else {
+        			$input.css('background-color', '#D5F7CB');
+      		  		$reponse.text(''); 
+    			}
+       		}
+        $('input[name=titre]').blur(function(){
+    			validTitre = validationTitre($(this).val());
+    			affichageReponse($(this),validTitre,"Champ obligatoire");
+			});
+
+		$('textarea[name=contenu]').blur(function(){
+   			validText = validationText($(this).val());
+    		affichageReponse($(this),validText,"Le contenu doit faire plus de 20 caractères");
+		});
+
+    });
     function publier(event) {
     event.preventDefault();
+    if(!validTitre || !validText){
+        alert("Veuillez corriger les champs en rouge.");
+        return;
+    }
     let formData = $('#formulaire_nouveau_sujet').serialize(); // récupère titre + contenu + token
     $.ajax({
         url: 'enregistrer_sujet.php',
