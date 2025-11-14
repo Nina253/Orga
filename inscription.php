@@ -15,7 +15,7 @@
 				Email<br>
 				<input class="barre3" type="text" name="email" placeholder="ex: xyz@gmail.com" required><br>
 				Numéro de téléphone<br>
-				<input class="barre3" type="text" name="num" placeholder="ex: 06 41 41 41 41" required><br>
+				<input class="barre3" type="text" name="num" placeholder="ex: 0641414141" required><br>
 				Mot de passe<br>
 				<input class="barre3" type="password" name="mdp" required>
 				<button type="submit" class="bouton_noir2">S'inscrire</button>
@@ -28,5 +28,6 @@
 		</footer>
 	</body>
 </html>
+
 
 

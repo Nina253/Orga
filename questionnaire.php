@@ -5,13 +5,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" > 
-        <title>QuestionnaireTG</title>
+        <title>Questionnaire</title>
     </head>
 	<body>
 		
     <?php include "navbar.php" ?>
 
+	<?php
+		$nom=$_POST['nom'];
+		$prenom=$_POST['prenom'];
+		$genre=$_POST['genre'];
 
+		if (isset($nom)&&isset($prenom)&&isset($genre)){
+			require 'bd.php';
+			$bdd=getBD(); 
+			$rep= $bdd->prepare("UPDATE utilisateur SET nom=?,prenom=?,genre=?");
+			$rep->execute([$nom,$prenom,$genre]);
+		}
+		
+
+	?>
 		<h1>Questionnaire</h1>
 		
 		<h2 class='h'>Tes Habitudes</h2>
@@ -82,4 +95,5 @@
 		
 		
 	</body>
+
 </html>
