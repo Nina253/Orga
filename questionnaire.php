@@ -12,15 +12,7 @@
     <?php include "navbar.php" ?>
 
 	<?php
-		$nom=$_POST['nom'];
-		$prenom=$_POST['prenom'];
-		$genre=$_POST['genre'];
-		require 'bd.php';
-		$bdd=getBD(); 
-		$rep= $bdd->prepare("UPDATE utilisateurs SET nom=?,prenom=?,genre=? WHERE mail=?");
-		$rep->execute([$nom,$prenom,$genre,$_SESSION['mail']]);
-		
-
+		include "quest1.php"
 	?>
 		<h1>Questionnaire</h1>
 		
@@ -94,3 +86,4 @@
 	</body>
 
 </html>
+
