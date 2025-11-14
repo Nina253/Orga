@@ -15,13 +15,10 @@
 		$nom=$_POST['nom'];
 		$prenom=$_POST['prenom'];
 		$genre=$_POST['genre'];
-
-		if (isset($nom)&&isset($prenom)&&isset($genre)){
-			require 'bd.php';
-			$bdd=getBD(); 
-			$rep= $bdd->prepare("UPDATE utilisateur SET nom=?,prenom=?,genre=?");
-			$rep->execute([$nom,$prenom,$genre]);
-		}
+		require 'bd.php';
+		$bdd=getBD(); 
+		$rep= $bdd->prepare("UPDATE utilisateurs SET nom=?,prenom=?,genre=? WHERE mail=?");
+		$rep->execute([$nom,$prenom,$genre,$_SESSION['mail']]);
 		
 
 	?>
