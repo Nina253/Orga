@@ -1,5 +1,9 @@
 <?php 
 	session_start();
+    if (!isset($_SESSION['client'])){
+        header('Location: home.php');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +21,7 @@
 
     <div class="profile">
         <img src="images/perso.jpg" alt="perso">
-        <h1>Bienvenu Prénom Nom</h1>
+        <h1>Bienvenue <?php echo $_SESSION['client']['nom'];?>  <?php echo $_SESSION['client']['prenom'];?> </h1>
         <p class="subtitle">Que souhaites-tu faire:</p>
     </div>
 
