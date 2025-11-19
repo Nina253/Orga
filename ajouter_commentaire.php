@@ -4,12 +4,12 @@ header('Content-Type: application/json');
 include("bd.php");
 $bdd = getBD();
 
-if(!isset($_SESSION['id_etu'])){
+if(!isset($_SESSION['client'])){
     echo json_encode(['success'=>false,'message'=>'Connectez-vous.']);
     exit;
 }
 
-$id_etu = $_SESSION['id_etu'];
+$id_etu = $_SESSION['client'];
 $id_sujet = (int)$_POST['id_sujet'];
 $contenu = trim($_POST['contenu']);
 

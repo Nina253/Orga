@@ -1,4 +1,18 @@
 <?php
+function genererIdEtu($bdd) {
+    $stmt = $bdd->query("SELECT id_etu FROM etudiant ORDER BY id_etu DESC LIMIT 1");
+    $lastId = $stmt->fetchColumn() ?: 'E000'; // Si aucun étudiant, on commence à E000
+
+    $number = (int)substr($lastId, 1);
+
+    
+    $newNumber = $number + 1;
+
+    $newId = 'S' . str_pad($newNumber, 3, '0', STR_PAD_LEFT);
+
+    return $newId;
+}
+
 	$mail=$_POST["email"];
 	$mdp=$_POST["mdp"];
 	$num=$_POST["num"];
@@ -8,9 +22,9 @@
 	function enregistrer($mail, $mdpC, $num) {
 		require 'bd.php';
 		$bdd = getBD();
-		
-		$rep = $bdd->prepare("INSERT INTO utilisateurs (nom,prenom,genre,niveau_educ_parents,date_naiss,mail, mdp, num) VALUES ('','','','','0001/01/01',?,?,?);");
-		$rep -> execute([$mail,$mdpC,(int)$num]);
+		$id_etu = genererIdEtu($bdd);
+		$rep = $bdd->prepare("INSERT INTO etudiant (id_etu,nom,prenom,age, genre, mail,mdp, niveau_educ_parents) VALUES (?,'','',NULL,'',?,?,'');");
+    	$rep->execute([$id_etu,$mail,$mdpC]);
 	}
 	
 	if(ctype_digit($num)){
@@ -19,11 +33,6 @@
 	} else {
 		echo '<meta http-equiv="refresh" content="0;inscription.php"/>';
 	}
-	
-
-	
-
-
 
 ?>
 

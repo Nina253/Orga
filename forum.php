@@ -72,8 +72,8 @@
     <h1>Bienvenue sur le forum</h1>
     <p class="txt_intro">Discutez avec d’autres personnes de vos difficultés d’organisation</p>
 
-    <?php if(isset($_SESSION["mail"])){
-        echo '<a href="nouveau_sujet.php">Nouveau sujet</a>';
+    <?php if(isset($_SESSION["client"])){
+        echo '<a href="ajouter_sujet.php">Nouveau sujet</a>';
     }
     ?>
 
@@ -101,7 +101,7 @@
     <div class="liste-commentaires" id="liste-com-<?= $s['id'] ?>"></div>
 
     <!-- Formulaire pour écrire -->
-    <?php if(isset($_SESSION["mail"])): ?>
+    <?php if(isset($_SESSION["client"])): ?>
     <textarea id="txt-com-<?= $s['id'] ?>" placeholder="Votre commentaire..."></textarea>
     <button onclick="ajouterCommentaire(<?= $s['id'] ?>)">Envoyer</button>
 <?php endif; ?>
