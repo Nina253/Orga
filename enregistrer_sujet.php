@@ -1,10 +1,11 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 include("bd.php");
 $bdd = getBD();
 
 // Vérification connexion
-if (!isset($_SESSION['id_etu'])) {
+if (!isset($_SESSION['client'])) {
     echo json_encode(['success'=>false, 'message'=>'Vous devez être connecté.']);
     exit;
 }
@@ -18,7 +19,7 @@ if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
 // Récupérer les données
 $titre = trim($_POST['titre'] ?? '');
 $contenu = trim($_POST['contenu'] ?? '');
-$id_etu = $_SESSION['id_etu'];
+$id_etu = $_SESSION['client']['id'];
 
 if ($titre === '' || $contenu === '') {
     echo json_encode(['success'=>false, 'message'=>'Veuillez remplir tous les champs.']);
@@ -30,3 +31,4 @@ $stmt = $bdd->prepare("INSERT INTO sujets (titre, contenu, id_etu, date_creation
 $stmt->execute([$titre, $contenu, $id_etu]);
 
 echo json_encode(['success'=>true, 'message'=>'Sujet publié avec succès !']);
+?>

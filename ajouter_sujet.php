@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <?php
+    
     include("bd.php");
     $bdd = getBD();
     if (!isset($_SESSION['token'])) {

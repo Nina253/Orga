@@ -10,15 +10,15 @@
 		
 			require "bd.php";
 			$bdd=getBD(); 
-			$repR= $bdd->prepare("SELECT nom, prenom FROM utilisateurs WHERE mail = ?");
+			$repR= $bdd->prepare("SELECT nom, prenom FROM etudiant WHERE mail = ?");
 			$repR->execute([$_SESSION['mail']]);
 			$verf = $repR->fetch();
-			$rep= $bdd->prepare("SELECT * FROM utilisateurs WHERE mail = ?");
+			$rep= $bdd->prepare("SELECT * FROM etudiant WHERE mail = ?");
  			$rep->execute([$_SESSION['mail']]);
 			$utl = $rep->fetch();
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
-				$_SESSION['client'] = ['id' => $utl['id_user']] ;
+				$_SESSION['client'] = ['id' => $utl['id_etu']] ;
 				if($verf['nom']==''||$verf['prenom']==''){
 					echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
 				} else{
