@@ -13,13 +13,16 @@
 		<p class='c'>C’est parti pour améliorer tes performance, commence par remplir le questionnaire ci-dessous</p>
 		<h2 class='h'>Qui es-tu ?</h2>
 		
-		<form class="quest" action="questionnaire.php" method="post">
+		<form class="quest" action="quest1.php" method="post">
 			<p><strong>1. Ton prénom</strong></p>
 			<input class="barre" type="text" name="prenom" required>
 
 			<p><strong>2. Ton nom</strong></p>
 			<input class="barre" type="text" name="nom" required>
-
+			
+			<p><strong>2. Ta date de naissance</strong></p>
+			<input class="barre" type="date" name="date" required>
+			
 			<p><strong>3. Ton genre</strong></p>
 			<label class="lign">
 			  <input type="radio" name="genre" value="femme"> Femme
@@ -33,8 +36,8 @@
 			  <input type="radio" name="genre" value="autre"> Autre
 			</label>
 			<br>
-
-			<button type="submit" class="suivant">Suivant</button>
+			
+			<button type="submit" class="suivant">Valider</button>
 		</form>
 		
 		<footer>
