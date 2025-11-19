@@ -10,12 +10,18 @@
 		$bdd = getBD();
 		
 		$rep = $bdd->prepare("INSERT INTO utilisateurs (nom,prenom,genre,niveau_educ_parents,date_naiss,mail, mdp, num) VALUES ('','','','','0001/01/01',?,?,?);");
-		$rep -> execute([$mail,$mdpC,$num]);
+		$rep -> execute([$mail,$mdpC,(int)$num]);
 	}
 	
-	enregistrer($mail, $mdpC,$num);
+	if(ctype_digit($num)){
+		enregistrer($mail, $mdpC,$num);
+		echo '<meta http-equiv="refresh" content="0;connecter.php"/>';
+	} else {
+		echo '<meta http-equiv="refresh" content="0;inscription.php"/>';
+	}
+	
 
-	echo '<meta http-equiv="refresh" content="0;home.php"/>';
+	
 
 
 
