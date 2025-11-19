@@ -10,16 +10,25 @@
 		
 			require "bd.php";
 			$bdd=getBD(); 
+			$repR= $bdd->prepare("SELECT nom, prenom FROM utilisateurs WHERE mail = ?");
+			$repR->execute([$_SESSION['mail']]);
+			$verf = $repR->fetch();
 			$rep= $bdd->prepare("SELECT * FROM utilisateurs WHERE mail = ?");
  			$rep->execute([$_SESSION['mail']]);
-			$utl = $rep->fetch(PDO::FETCH_ASSOC);
+			$utl = $rep->fetch();
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
-				$_SESSION['client'] = ['id' => $utl['id_user']] ;
-				echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
+				// $_SESSION['client'] = ['id' => $utl['id_user']] ;
+				if($verf['nom']==''||$verf['prenom']==''){
+					echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
+				} else{
+					$_SESSION["nom"]=$verf['nom'];
+					$_SESSION["prenom"]=$verf['prenom'];
+					echo '<meta http-equiv="refresh" content="0;compte.php"/>';
+				}
 				die;
 			} else{
-				echo '<meta http-equiv="refresh" content="0;connexion.php"/>';
+				echo '<meta http-equiv="refresh" content="0;connecter.php"/>';
 				die;
 			}
 	} else{
