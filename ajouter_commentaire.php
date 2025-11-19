@@ -1,7 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-include("bd.php");
+include_once("bd.php");
 $bdd = getBD();
 
 if(!isset($_SESSION['client'])){
@@ -9,7 +9,7 @@ if(!isset($_SESSION['client'])){
     exit;
 }
 
-$id_etu = $_SESSION['client'];
+$id_etu = $_SESSION['client']['id'];
 $id_sujet = (int)$_POST['id_sujet'];
 $contenu = trim($_POST['contenu']);
 

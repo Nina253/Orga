@@ -9,7 +9,7 @@ if(!isset($_SESSION['client'])){
     exit;
 }
 
-$id_etu = $_SESSION['client'];
+$id_etu = $_SESSION['client']['id'];
 $id_sujet = (int)$_POST['id_sujet'];
 
 // Vérifie si déjà liké
