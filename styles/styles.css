@@ -8,6 +8,7 @@
 
 
 
+
 * {
   border: red 1px dotted;
 	padding: 0px; 
@@ -486,136 +487,49 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
   background-color: rgb(94, 88, 88);
 }
 
-
-#nous_page{
-    background-image: url(../images/photo_nous.jpg); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.btn_like_comm{
+  background-color: white;
 }
 
-#nous_page h1{
-    color: white;
-    font-size: 4rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    margin-top: 2rem; 
+.txt_intro{
+  text-align: center;
 }
 
-#nous_page p{
-    color: white;
-    font-size: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: bolder;
-}
-
-
-
-
-/* MON COMPTE */
-
-
-.container {
-    width: 100%;
-
-    margin-top: 20px;
-    text-align: center;
-}
-
-.profile img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-}
-
-h1 {
-    font-size: 35px;
-    margin: 15px 0 5px 0;
-}
-
-.subtitle {
-    margin-bottom: 30px;
-    color: #555;
-}
-
-.content {
-    height: 500px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-/* LEFT BUTTONS */
-.left {
-    height: 500px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.left button {
-    padding: 12px 20px;
-    width: 80%;
-    margin: auto;
-    font-size: 15px;
-    background-color: #1e8cff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.left button:hover {
-    background-color: #0f6edb;
-}
-
-/* RIGHT SIDE */
-.right {
-    width: 50%;
-}
-
-.left .bloc{
-
-  width:  90%;
-  margin-left: 3%;
-}
-
-/* Calendar card */
-.calendar {
-    background: #007bff;
-    padding: 20px;
+#formulaire_nouveau_sujet {
+    background-color: white;
     border-radius: 10px;
-    color: white;
-    margin-bottom: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 50%;
 }
 
-.calendar h3 {
-    margin-top: 0;
+/* Titres des champs */
+#formulaire_nouveau_sujet p {
+    margin: 10px 0 5px 0;
+    font-weight: bold;
 }
 
-.calendar table {
+/* Inputs + textarea */
+#formulaire_nouveau_sujet input,
+#formulaire_nouveau_sujet textarea {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
+    margin: 5px auto 15px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
-.calendar th, .calendar td {
-    padding: 5px;
-    text-align: center;
+/* Hauteur mini du texte */
+#formulaire_nouveau_sujet textarea {
+    min-height: 150px;
 }
 
-/* Today box */
-.today {
-    text-align: left;
-    padding-left: 10px;
-}
-
-.today h4 {
-    margin-bottom: 5px;
+/* Messages d’erreur/d’infos sous les champs */
+#formulaire_nouveau_sujet .msg {
+    margin-left: 2.5%;
+    font-size: 12px;
 }
