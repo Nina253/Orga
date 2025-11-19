@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 include("bd.php");
 $bdd = getBD();
@@ -18,12 +19,21 @@ $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Construire le HTML
 ob_start();
 foreach($commentaires as $c){
-    echo "<div class='commentaire'>";
-    echo "<b>{$c['prenom']} {$c['nom']}</b><br>";
-    echo nl2br(($c['contenu']));
-    echo "<br><small>{$c['date_post']}</small>";
+    $prenom = $c['prenom'];
+    $nom = $c['nom'];
+    $contenu = nl2br(($c['contenu']));
+    $date = $c['date_post'];
+
+    echo "<div class='commentaire' id='com-{$c['id']}'>";
+    echo "<b>$prenom $nom</b><br>$contenu<br><small>$date</small>";
+    if(isset($_SESSION['client']) && $_SESSION['client']['id'] == $c['id_etu']){
+        echo "<br><button class='btn_edit_com' onclick='modifierCommentaire({$c['id']}, {$c['sujet_id']})'>Modifier</button>";
+        echo "<button class='btn_delete_com' onclick='supprimerCommentaire({$c['id']}, {$c['sujet_id']})'>Supprimer</button>";
+    }
+
     echo "</div>";
 }
+
 $html = ob_get_clean();
 
 echo json_encode([

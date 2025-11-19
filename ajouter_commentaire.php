@@ -1,29 +1,53 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-include_once("bd.php");
+include("bd.php");
 $bdd = getBD();
 
-if(!isset($_SESSION['client'])){
-    echo json_encode(['success'=>false,'message'=>'Connectez-vous.']);
+// Vérification connexion
+if (!isset($_SESSION['client'])) {
+    echo json_encode(['success'=>false, 'message'=>'Vous devez être connecté.']);
     exit;
 }
 
+// Récupérer données
+$id_sujet = (int)($_POST['id_sujet'] ?? 0);
+$contenu = trim($_POST['contenu'] ?? '');
 $id_etu = $_SESSION['client']['id'];
-$id_sujet = (int)$_POST['id_sujet'];
-$contenu = trim($_POST['contenu']);
 
-if($contenu === ""){
-    echo json_encode(['success'=>false,'message'=>'Commentaire vide.']);
+if ($id_sujet <= 0 || $contenu === '') {
+    echo json_encode(['success'=>false, 'message'=>'Commentaire invalide.']);
     exit;
 }
 
-$stmt = $bdd->prepare("INSERT INTO commentaires (sujet_id, id_etu, contenu) VALUES (?, ?, ?)");
+// Insertion
+$stmt = $bdd->prepare("INSERT INTO commentaires (sujet_id, id_etu, contenu, date_post) VALUES (?, ?, ?, NOW())");
 $stmt->execute([$id_sujet, $id_etu, $contenu]);
 
-// Recharge les commentaires
-ob_start();
-include('charger_commentaires.php');
-$html = ob_get_clean();
+// ID du commentaire inséré
+$id_commentaire = $bdd->lastInsertId();
 
-echo json_encode(['success'=>true,'html'=>$html]);
+// Récupérer l’utilisateur
+$q = $bdd->prepare("SELECT prenom, nom FROM etudiant WHERE id_etu = ?");
+$q->execute([$id_etu]);
+$user = $q->fetch(PDO::FETCH_ASSOC);
+
+// Format HTML avec le BON bouton supprimer
+$html = "<div class='commentaire' id='com-$id_commentaire'>";
+$html .= "<b>{$user['prenom']} {$user['nom']}</b><br>".nl2br($contenu)."<br><small>À l'instant</small>";
+$html.= "<br><button class='btn_edit_com' onclick='modifierCommentaire($id_commentaire, $id_sujet)'>Modifier</button>";
+$html .= "<button class='btn_delete_com' onclick='supprimerCommentaire($id_commentaire, $id_sujet)'>🗑️ Supprimer</button>";
+$html .= "</div>";
+
+// Nouveau nombre de commentaires
+$c = $bdd->prepare("SELECT COUNT(*) FROM commentaires WHERE sujet_id = ?");
+$c->execute([$id_sujet]);
+$nbCommentaires = $c->fetchColumn();
+
+echo json_encode([
+    'success'=>true,
+    'html'=>$html,
+    'message'=>'Commentaire ajouté !',
+    'nb_com' => $nbCommentaires
+]);
+?>

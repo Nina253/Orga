@@ -51,15 +51,101 @@
         return;
     }
 
-    $.post("ajouter_commentaire.php", { id_sujet: id_sujet, contenu: contenu }, function(rep){
+     $.post("ajouter_commentaire.php", { id_sujet: id_sujet, contenu: contenu }, function(rep){
         if(rep.success){
-            $('#liste-com-' + id_sujet).html(rep.html);
+
+            // ➤ 1 : Ouvrir la zone des commentaires si elle est fermée
+            const zone = $('#commentaires-' + id_sujet);
+            if(!zone.is(':visible')){
+                zone.show();
+            }
+
+            // ➤ 2 : Ajouter le nouveau commentaire
+            $('#liste-com-' + id_sujet).prepend(rep.html);
+
+            // ➤ 3 : Vider le champ
             $('#txt-com-' + id_sujet).val('');
         } else {
             alert(rep.message);
         }
     }, "json");
 }
+
+function envoyerCommentaire(event, id_sujet){
+    event.preventDefault();
+
+    let input = $('#txt-com-' + id_sujet);
+    let contenu = input.val().trim();
+
+    if(contenu.length < 1){
+        alert("Votre commentaire est vide.");
+        return;
+    }
+
+    $.ajax({
+        url: 'ajouter_commentaire.php',
+        type: 'POST',
+        data: { id_sujet: id_sujet, contenu: contenu },
+        dataType: 'json',
+        success: function(rep) {
+
+            if(rep.success){
+
+                // 🔥 Afficher message comme pour l’ajout d’un sujet
+                $('#msg-com-' + id_sujet)
+                    .css({color:'green'})
+                    .text("Commentaire ajouté !");
+
+                // 💬 Ajouter le commentaire directement
+                $('#liste-com-' + id_sujet).prepend(rep.html);
+                $('#nb-com-' + id_sujet).text(rep.nb_com);
+
+                // 🧹 Vider le champ
+                input.val('');
+
+                // ⏱️ Effacer le message après 1 sec
+                setTimeout(()=> $('#msg-com-' + id_sujet).text(""), 1000);
+
+            } else {
+                $('#msg-com-' + id_sujet)
+                    .css({color:'red'})
+                    .text(rep.message);
+            }
+        },
+        error: function(jqXHR){
+            alert("Erreur serveur !");
+            console.log(jqXHR.responseText);
+        }
+    });
+}
+
+
+function supprimerCommentaire(id_com, id_sujet){
+    if(!confirm("Supprimer ce commentaire ?")){
+        return;
+    }
+
+    $.post("supprimer_commentaire.php", { id_com: id_com }, function(rep){
+        if(rep.success){
+
+            // 🗑️ supprimer du DOM
+            $('#com-' + rep.id_com).remove();
+
+            // 🔢 actualiser compteur
+            $('#nb-com-' + id_sujet).text(rep.nb_com);
+
+        } else {
+            alert(rep.message);
+        }
+    }, "json")
+    .fail(function(){
+        alert("Erreur serveur");
+    });
+}
+
+
+
+
 
 
     </script>
@@ -92,7 +178,7 @@
     | 
 
     <button class="btn_like_comm" onclick="toggleCommentaires(<?= $s['id'] ?>)">💬 Commentaires</button>
-    <span><?= $s['nb_com'] ?></span>
+<span id="nb-com-<?= $s['id'] ?>"><?= $s['nb_com'] ?></span>
   
 </div>
   <div id="commentaires-<?= $s['id'] ?>" class="commentaires" style="display:none;">
@@ -103,7 +189,9 @@
     <!-- Formulaire pour écrire -->
     <?php if(isset($_SESSION["client"])): ?>
     <textarea id="txt-com-<?= $s['id'] ?>" placeholder="Votre commentaire..."></textarea>
-    <button onclick="ajouterCommentaire(<?= $s['id'] ?>)">Envoyer</button>
+    <button onclick="envoyerCommentaire(event, <?= $s['id'] ?>)">Envoyer</button>
+    <div id="msg-com-<?= $s['id'] ?>" class="msg"></div>
+
 <?php endif; ?>
 </div>
   
