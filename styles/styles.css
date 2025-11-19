@@ -9,12 +9,14 @@
 
 
 
-* {
+/* {
   border: red 1px dotted;
 	padding: 0px; 
 	margin: 0px;
 	font-size: 16px;
 }
+
+*/
 html{
     height: 100%;
 }
@@ -535,7 +537,7 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
 }
 
 
-/* MON COMPTE */
+                                                                /* MON COMPTE */
 
 
 .container {
@@ -628,4 +630,26 @@ h1 {
 
 .today h4 {
     margin-bottom: 5px;
+}
+
+                                                  /* TABLEAU DE BORD */
+
+ 
+#myChart {
+  
+    width: 70% !important;
+    height:300px !important; /* hauteur fixe visible */
+    display: block;
+    margin: 0 auto 20px auto; /* espace en bas pour sous-titre ou légende */
+}
+
+.barre4 p {
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.barre4 + .barre4 {
+    margin-top: 40px;
 }
