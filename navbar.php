@@ -15,17 +15,18 @@ $base = '/Orga';
 
   <div class="nav-droite">
     <?php if (isset($_SESSION['client'])){ ?>
-      <a href="<?= $base ?>/tableau_bord.php">Tableau de Bord</a>
+      <a href="tableau_bord.php">Tableau de Bord</a>
       <?php
     };
     ?>
-    <a href="<?= $base ?>/forum.php">Forum</a>
+    <a href="forum.php">Forum</a>
 
     <?php if (isset($_SESSION['client'])): ?>
-      <a href="<?= $base ?>/compte.php" class="btn btn-green">Mon compte</a>
+      <a href="compte.php" class="btn btn-green">Mon compte</a>
+	  <a href="deconnexion.php" class="btn btn-green">Se déconnecter</a>
     <?php else: ?>
 
-      <a class="bloc connexion" href="<?= $base ?>/connecter.php">Se connecter</a>
+      <a class="bloc connexion" href="connecter.php">Se connecter</a>
     <?php endif; ?>
   </div>
 </nav>
