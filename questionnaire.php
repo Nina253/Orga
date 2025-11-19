@@ -11,53 +11,20 @@
 		
     <?php include "navbar.php" ?>
 
-	<?php
-		include "quest1.php"
-	?>
+
 		<h1>Questionnaire</h1>
 		
 		<h2 class='h'>Tes Habitudes</h2>
 		
-		<form action="questionnaire_2.php" method="post">
+		<form action="quest2.php" method="post">
 		
-			<p><strong>1. Combien de temps passes-tu sur les réseaux sociaux (par jour) ?</strong></p>
-			
-			<label class="col">
-			  <input type="radio" name="tps" value="0"> Moins de 2 heures
-			</label>
-			
-			<label class="col">
-			  <input type="radio" name="tps" value="2"> Moins de 4 heures
-			</label>
-			
-			<label class="col">
-			  <input type="radio" name="tps" value="4"> Moins de 6 heures
-			</label>
-			
-			<label class="col">
-			  <input type="radio" name="tps" value="6"> Plus de 6 heures
-			</label>
+			<p><strong>1. Combien de temps, en heures, passes-tu sur les réseaux sociaux (par jour) ?</strong></p>
+				<input class="barre" type="number" step="0.1" name="tps" max="24" min="0" required>
 			<br>
 			
-			<p><strong>2. Combien de temps passes-tu sur Netflix ?</strong></p>
-			
-			<label class="col">
-			  <input type="radio" name="netflix" value="0"> Moins de 2 heures
-			</label>
-			
-			<label class="col">
-			  <input type="radio" name="netflix" value="2"> Moins de 4 heures
-			</label>
-			
-			<label class="col">
-			  <input type="radio" name="netflix" value="4"> Moins de 6 heures
-			</label>
-			
-			<label class="col">
-			  <input type="radio" name="netflix" value="6"> Plus de 6 heures
-			</label>
+			<p><strong>2. Combien de temps, en heures, passes-tu sur Netflix ?</strong></p>
+			<input class="barre" type="number" step="0.1" name="netflix" max="24" min="0" required>
 			<br>
-			
 			<p><strong>3. As-tu un travail en plus de tes études ?</strong></p>
 			
 			<label class="lign">
