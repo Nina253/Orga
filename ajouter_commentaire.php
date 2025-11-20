@@ -35,7 +35,7 @@ $user = $q->fetch(PDO::FETCH_ASSOC);
 // Format HTML avec le BON bouton supprimer
 $html = "<div class='commentaire' id='com-$id_commentaire'>";
 $html .= "<b>{$user['prenom']} {$user['nom']}</b><br>".nl2br($contenu)."<br><small>À l'instant</small>";
-$html .= "<button class='btn_delete_com' onclick='supprimerCommentaire($id_commentaire, $id_sujet)'>🗑️ Supprimer</button>";
+$html .= "<button class='btn_delete_com' onclick='supprimerCommentaire($id_commentaire, $id_sujet)'>Supprimer</button>";
 $html .= "</div>";
 
 // Nouveau nombre de commentaires

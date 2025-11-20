@@ -129,7 +129,7 @@ function supprimerCommentaire(id_com, id_sujet){
     $.post("supprimer_commentaire.php", { id_com: id_com }, function(rep){
         if(rep.success){
 
-            // 🗑️ supprimer du DOM
+            // supprimer du DOM
             $('#com-' + rep.id_com).remove();
 
             // 🔢 actualiser compteur
@@ -154,7 +154,7 @@ function supprimerSujet(id_sujet){
 
     $.post("supprimer_sujet.php", { id_sujet: id_sujet }, function(rep){
         if(rep.success){
-            // 🗑 Supprimer le bloc HTML
+            //  Supprimer le bloc HTML
             $('[data-id="'+id_sujet+'"]').remove();
         } else {
             alert(rep.message);
@@ -175,7 +175,7 @@ function supprimerSujet(id_sujet){
     <p class="txt_intro">Discutez avec d’autres personnes de vos difficultés d’organisation</p>
 
     <?php if(isset($_SESSION["client"])){
-        echo '<a href="ajouter_sujet.php">Nouveau sujet</a>';
+        echo '<a id="bouton_bleu_nouveau_sujet" href="ajouter_sujet.php">Nouveau sujet</a>';
     }
     ?>
 
@@ -218,7 +218,9 @@ function supprimerSujet(id_sujet){
 </div>
 <?php endforeach; ?>
 
-
-
+<footer id="footer_forum">
+    <img class="logo" src="images/logo.png" alt="logo">
+    <a href="nous.php">Qui sommes-nous ?</a>
 </body>
+
 </html>

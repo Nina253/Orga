@@ -4,11 +4,10 @@
     <?php
    include("bd.php");
     $bdd = getBD();
+    session_start();
     if (!isset($_SESSION['token'])) {
 			$_SESSION['token'] = bin2hex(random_bytes(32));
 			}
-
-      
     ?>
     
     
@@ -88,11 +87,13 @@
     <title>Nouveau sujet</title>
 
 </head>
-<body>
+<body >
     <?php include "navbar.php";?>
     <h1>Nouveau sujet</h1>
     <p class="txt_intro">Pose ta question</p>
 
+
+    
     <form id="formulaire_nouveau_sujet" action="enregistrer_sujet.php" method="post">
     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
     <p>Titre</p>
@@ -102,10 +103,13 @@
 	<input type="button" value="Publier" onclick="publier(event)">
     <div id="message" ></div>
     </form>
-    
+    <a class="bouton_retour" href="forum.php">Retour</a>
 
 
-   
-
+<footer>
+	<img class="logo" src="images/logo.png" alt="logo" >
+	
+	<a href="nous.php" >Qui sommes-nous ?</a>
+	</footer>
 </body>
 </html>

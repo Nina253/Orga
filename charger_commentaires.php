@@ -27,7 +27,7 @@ foreach($commentaires as $c){
     echo "<div class='commentaire' id='com-{$c['id']}'>";
     echo "<b>$prenom $nom</b><br>$contenu<br><small>$date</small>";
     if(isset($_SESSION['client']) && $_SESSION['client']['id'] == $c['id_etu']){
-        echo "<br><button class='btn_delete_com' onclick='supprimerCommentaire({$c['id']}, {$c['sujet_id']})'>🗑️ Supprimer</button>";
+        echo "<button class='btn_delete_com' onclick='supprimerCommentaire({$c['id']}, {$c['sujet_id']})'>Supprimer</button>";
     }
 
     echo "</div>";
