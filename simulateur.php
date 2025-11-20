@@ -14,7 +14,7 @@
 	<h1>Simulateur de performance</h1>
 	<div class="conteneur">
 	<div class="text">
-	<h3>Et si je changeais mes habitudes ? Simule rapidement l'impact de petits changements sur tes performances</h3>
+	<p class="intro">Et si je changeais mes habitudes ? Simule rapidement l'impact de petits changements sur tes performances</p>
     <h1>Simulateur de performance</h1>
 
 <div class="simulateur">
