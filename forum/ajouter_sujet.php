@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <?php
-   include("bd.php");
+   include("../bd.php");
     $bdd = getBD();
     session_start();
     if (!isset($_SESSION['token'])) {
@@ -12,7 +12,7 @@
     
     
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" > 
+    <link rel="stylesheet" href="../styles/styles.css" type="text/css" media="screen" > 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -88,7 +88,7 @@
 
 </head>
 <body >
-    <?php include "navbar.php";?>
+    <?php include "../navbar.php";?>
     <h1>Nouveau sujet</h1>
     <p class="txt_intro">Pose ta question</p>
 
@@ -107,9 +107,9 @@
 
 
 <footer>
-	<img class="logo" src="images/logo.png" alt="logo" >
+	<img class="logo" src="../images/logo.png" alt="logo" >
 	
-	<a href="nous.php" >Qui sommes-nous ?</a>
+	<a href="../nous.php" >Qui sommes-nous ?</a>
 	</footer>
 </body>
 </html>

@@ -1,9 +1,9 @@
-<?php include "navbar.php" ?>
+<?php include "../navbar.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <?php
-    include("bd.php");
+    include("../bd.php");
     $bdd = getBD();
     $sql = "SELECT s.*, e.nom, e.prenom,
         (SELECT COUNT(*) FROM likes_sujets WHERE sujet_id = s.id) AS nb_likes,
@@ -16,7 +16,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    		<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" > 
+    		<link rel="stylesheet" href="../styles/styles.css" type="text/css" media="screen" > 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
@@ -219,8 +219,8 @@ function supprimerSujet(id_sujet){
 <?php endforeach; ?>
 
 <footer id="footer_forum">
-    <img class="logo" src="images/logo.png" alt="logo">
-    <a href="nous.php">Qui sommes-nous ?</a>
+    <img class="logo" src="../images/logo.png" alt="logo">
+    <a href="../nous.php">Qui sommes-nous ?</a>
 </body>
 
 </html>

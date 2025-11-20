@@ -9,7 +9,7 @@ $base = '/Orga';
 
 <nav class="navbar">
   <div class="nav-left">
-    <a href="home.php"><img class="logo" src="images/logo.png" alt="logo" ></a>
+    <a href="/Orga/home.php"><img class="logo" src="/Orga/images/logo.png" alt="logo" ></a>
   </div>
 
   <div class="nav-mid"> 
@@ -19,18 +19,18 @@ $base = '/Orga';
 
   <div class="nav-droite">
     <?php if (isset($_SESSION['client'])){ ?>
-      <a href="tableau_bord.php">Tableau de Bord</a>
+      <a href="/Orga/tableau_bord.php">Tableau de Bord</a>
       <?php
     };
     ?>
-    <a href="forum.php">Forum</a>
+    <a href="/Orga/forum/forum.php">Forum</a>
 
     <?php if (isset($_SESSION['client'])): ?>
-      <a href="compte.php" class="btn btn-green">Mon compte</a>
-	  <a href="deconnexion.php" class="btn btn-green">Se déconnecter</a>
+      <a href="/Orga/compte.php" class="btn btn-green">Mon compte</a>
+	  <a href="/Orga/deconnexion.php" class="btn btn-green">Se déconnecter</a>
     <?php else: ?>
 
-      <a class="bloc connexion" href="connecter.php">Se connecter</a>
+      <a class="bloc connexion" href="/Orga/connecter.php">Se connecter</a>
     <?php endif; ?>
   </div>
 </nav>

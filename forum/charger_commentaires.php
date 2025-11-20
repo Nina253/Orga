@@ -1,7 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-include("bd.php");
+include("../bd.php");
 $bdd = getBD();
 
 $id_sujet = (int)$_POST['id_sujet'];

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("bd.php");
+include("../bd.php");
 $bdd = getBD();
 
 if(!isset($_SESSION["client"])){

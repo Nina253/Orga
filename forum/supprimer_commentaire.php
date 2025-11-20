@@ -1,7 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-include("bd.php");
+include("../bd.php");
 $bdd = getBD();
 
 if(!isset($_SESSION['client'])){
