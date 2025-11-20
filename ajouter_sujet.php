@@ -2,8 +2,7 @@
 <html lang="fr">
 <head>
     <?php
-    
-    include("bd.php");
+   include("bd.php");
     $bdd = getBD();
     if (!isset($_SESSION['token'])) {
 			$_SESSION['token'] = bin2hex(random_bytes(32));

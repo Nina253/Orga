@@ -1,3 +1,4 @@
+<?php include "navbar.php" ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -143,10 +144,26 @@ function supprimerCommentaire(id_com, id_sujet){
     });
 }
 
+function supprimerSujet(id_sujet){
+    if(!confirm("Voulez-vous vraiment supprimer ce sujet ?")){
+        return;
+    }
 
+    // 🔒 Fermer zone commentaires AVANT suppression
+    $('#commentaires-' + id_sujet).hide();
 
-
-
+    $.post("supprimer_sujet.php", { id_sujet: id_sujet }, function(rep){
+        if(rep.success){
+            // 🗑 Supprimer le bloc HTML
+            $('[data-id="'+id_sujet+'"]').remove();
+        } else {
+            alert(rep.message);
+        }
+    }, "json")
+    .fail(function(){
+        alert("Erreur serveur");
+    });
+}
 
     </script>
 
@@ -154,7 +171,6 @@ function supprimerCommentaire(id_com, id_sujet){
 
 </head>
 <body>
-    <?php include "navbar.php" ?>
     <h1>Bienvenue sur le forum</h1>
     <p class="txt_intro">Discutez avec d’autres personnes de vos difficultés d’organisation</p>
 
@@ -166,7 +182,11 @@ function supprimerCommentaire(id_com, id_sujet){
 <div id="liste_sujets">
 
 <?php foreach($sujets as $s): ?>
+
 <div class="sujet" data-id="<?= $s['id'] ?>">
+    <?php if(isset($_SESSION["client"]) && $_SESSION["client"]['id'] == $s['id_etu']): ?>
+    <button class="btn_supp_sujet" onclick="supprimerSujet(<?= $s['id'] ?>)">Supprimer le sujet</button>
+<?php endif; ?>
     <h3><?= ($s['titre']) ?></h3>
   <p><?= ($s['contenu']) ?></p>
   <p>Posté par <?= ($s['prenom']." ".$s['nom']) ?> le <?= $s['date_creation'] ?></p><br>
