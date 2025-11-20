@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 10 nov. 2025 à 10:25
+-- Généré le : jeu. 20 nov. 2025 à 19:42
 -- Version du serveur : 8.0.40
 -- Version de PHP : 8.3.14
 
@@ -35,6 +35,18 @@ CREATE TABLE `commentaires` (
   `date_post` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+--
+-- Déchargement des données de la table `commentaires`
+--
+
+INSERT INTO `commentaires` (`id`, `sujet_id`, `id_etu`, `contenu`, `date_post`) VALUES
+(1, 1, 'S1243', 'test test test test test test test test test', '2025-11-13 17:42:01'),
+(66, 14, 'S2001', 'test', '2025-11-20 12:42:13'),
+(68, 14, 'S2001', 'dbfb', '2025-11-20 14:52:56'),
+(69, 14, 'S2001', 'hjbhjvh', '2025-11-20 16:00:37'),
+(73, 15, 'S2001', 'test commentaire \nDonec sed dictum tellus. Sed placerat sapien id sapien efficitur dignissim. Quisque in turpis est. Nullam dapibus eget magna sed congue. Aenean sagittis nibh id ipsum tristique ornare. Curabitur est ex, ultrices vitae urna non, auctor imperdiet mi. Suspendisse potenti. Fusce tristique finibus nulla, ac volutpat est consequat nec. Nulla facilisi. Morbi elementum ullamcorper urna, vitae malesuada nunc pellentesque id. Nulla tincidunt vel magna vel efficitur. Nullam vel sem ultricies, malesuada justo egestas, placerat sapien. Aliquam erat volutpat. Ut condimentum nisl elit. Mauris vehicula mattis scelerisque.', '2025-11-20 16:27:17'),
+(75, 17, 'S2001', 'njknnkjnjsvkdjv', '2025-11-20 17:36:23');
+
 -- --------------------------------------------------------
 
 --
@@ -43,12 +55,12 @@ CREATE TABLE `commentaires` (
 
 CREATE TABLE `etudiant` (
   `id_etu` varchar(5) NOT NULL,
-  `nom` varchar(4) DEFAULT NULL,
-  `prenom` varchar(4) DEFAULT NULL,
+  `nom` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `prenom` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `age` int DEFAULT NULL,
   `genre` varchar(6) DEFAULT NULL,
-  `mail` varchar(4) DEFAULT NULL,
-  `mdp` varchar(4) DEFAULT NULL,
+  `mail` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `mdp` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `niveau_educ_parents` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
@@ -1057,7 +1069,10 @@ INSERT INTO `etudiant` (`id_etu`, `nom`, `prenom`, `age`, `genre`, `mail`, `mdp`
 ('S1996', 'N/A ', 'N/A ', 17, 'Female', 'N/A ', 'N/A ', 'High School'),
 ('S1997', 'N/A ', 'N/A ', 20, 'Male', 'N/A ', 'N/A ', 'Bachelor'),
 ('S1998', 'N/A ', 'N/A ', 24, 'Male', 'N/A ', 'N/A ', 'Bachelor'),
-('S1999', 'N/A ', 'N/A ', 19, 'Female', 'N/A ', 'N/A ', 'Bachelor');
+('S1999', 'N/A ', 'N/A ', 19, 'Female', 'N/A ', 'N/A ', 'Bachelor'),
+('S2000', '', '', NULL, NULL, 'test', NULL, NULL),
+('S2001', 'test1', 'test1', NULL, 'homme', 'test1', '$2y$10$q/YbVGhP7zUROAyJeNYzp.C8ajwlgcUc/4aKVM9EN5KKzRaaqJaIW', ''),
+('S2002', '', '', NULL, '', 'test7', '$2y$10$oX45Yt5rTQITYsC1DPZ2BeJsTdNyYF8i3ATCQZiXW7qVGYu/DkNVS', '');
 
 -- --------------------------------------------------------
 
@@ -2113,6 +2128,15 @@ CREATE TABLE `likes_sujets` (
   `date_like` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+--
+-- Déchargement des données de la table `likes_sujets`
+--
+
+INSERT INTO `likes_sujets` (`sujet_id`, `id_etu`, `date_like`) VALUES
+(2, 'S1222', '2025-11-13 17:06:09'),
+(2, 'S2001', '2025-11-19 21:15:36'),
+(15, 'S2001', '2025-11-20 16:27:42');
+
 -- --------------------------------------------------------
 
 --
@@ -3148,6 +3172,17 @@ CREATE TABLE `sujets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
+-- Déchargement des données de la table `sujets`
+--
+
+INSERT INTO `sujets` (`id`, `titre`, `contenu`, `id_etu`, `date_creation`) VALUES
+(1, 'test', 'test', 'S1000', '2025-11-13 12:08:29'),
+(2, 'test2', 'test2', 'S1222', '2025-11-13 17:04:55'),
+(14, 'test5', 'test5 test5 test5 test5 test5 test5 test5', 'S2001', '2025-11-20 12:42:06'),
+(15, 'Lorem', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non aliquam purus, nec vehicula nisi. Duis vulputate luctus mauris, sed interdum lectus porttitor sit amet. Cras eleifend pellentesque gravida. Mauris sit amet nisl odio. Nullam commodo sagittis enim, et varius magna posuere finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ac risus id ex porta aliquam sodales ac nulla. Nam at hendrerit mauris. Mauris fermentum dolor imperdiet purus placerat feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut ac sollicitudin quam. Sed fringilla neque ut magna rutrum, nec porta ante euismod. Donec dictum non mauris eget bibendum. Praesent dui diam, sagittis vel est eget, consectetur tincidunt erat. Suspendisse ultricies euismod felis non congue.', 'S2001', '2025-11-20 16:26:41'),
+(17, 'yhtgrfe', 'aergzerghzethertheryjryhtgrfedzzs', 'S2001', '2025-11-20 17:05:49');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -3209,13 +3244,13 @@ ALTER TABLE `sujets`
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT pour la table `sujets`
 --
 ALTER TABLE `sujets`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Contraintes pour les tables déchargées
