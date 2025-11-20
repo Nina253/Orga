@@ -196,7 +196,7 @@ margin-right: 20px;
 }
 
 p{
-margin:20px;
+margin:0px;
 text-align:justify;
 line-height:1.6;
 }
@@ -262,9 +262,7 @@ form p {margin-top:50px;}
 	box-shadow: 0 5px 15px silver;
 }
 
-.barre3{
-	
-}
+
 .suivant{
 	width: 200px;
   background-color: blue;
@@ -625,7 +623,6 @@ h1 {
     margin-top: 40px;
 }
 
-<<<<<<< HEAD
 
 
 /* ======================== Forum ======================= */
@@ -651,6 +648,7 @@ h1 {
 /* Hauteur mini du texte */
 #formulaire_nouveau_sujet textarea {
     min-height: 150px;
+    margin-bottom: 0px;
 }
 
 /* Messages d’erreur/d’infos sous les champs */
@@ -808,8 +806,3 @@ textarea + button {
     left: 0;
 }
 
-=======
-.no-data-message{
-  color:rgb(56, 185, 80); font-weight:bold; display:none; margin-bottom:20px;
-}
->>>>>>> df5812c96b45b94826af7a65487a9dbd0ce0d2fe
