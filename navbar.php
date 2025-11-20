@@ -9,7 +9,7 @@ $base = '/Orga';
 
 <nav class="navbar">
   <div class="nav-left">
-    <a href="/Orga/home.php"><img class="logo" src="/Orga/images/logo.png" alt="logo" ></a>
+    <a href="/Orga/index.php"><img class="logo" src="/Orga/images/logo.png" alt="logo" ></a>
   </div>
 
   <div class="nav-mid"> 

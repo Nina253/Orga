@@ -1,5 +1,6 @@
 <?php
 	session_start();
 	session_destroy();
-	echo '<meta http-equiv="refresh" content="0;home.php"/>';	
+	header("Location: index.php");
+	exit;
 ?>
