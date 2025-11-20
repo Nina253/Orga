@@ -655,3 +655,7 @@ h1 {
 .barre4 + .barre4 {
     margin-top: 40px;
 }
+
+.no-data-message{
+  color:rgb(56, 185, 80); font-weight:bold; display:none; margin-bottom:20px;
+}
