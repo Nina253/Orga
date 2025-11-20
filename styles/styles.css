@@ -80,7 +80,7 @@ width: 350px;
 }
 .bouton_retour{
 display: block;
-  width: 200px;
+  width: 30%;
   margin: 0 auto; /* centre horizontalement */
   margin-bottom: 50px;
   background-color: var(--couleur-primaire-bleu);
@@ -96,6 +96,7 @@ display: block;
   background-color: white ;
   color: var(--couleur-primaire-bleu);
 }
+
 
 
 
@@ -383,12 +384,12 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 6rem;
   width: 92vw; 
-  min-height: 100vh; 
+
   background-color: transparent; 
-  margin: 0;
-  padding: 0;
+  margin-top: 50px;
+margin-bottom: 30px;
   border-radius: 0;
   box-shadow: none;
 }
@@ -409,10 +410,17 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
 }
 
 .scale {
-  font-size: 1rem;
-  color: #555;
-  margin-top: 0.2rem;
-  letter-spacing: 0.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-top: 3px;
+  margin-bottom: 12px;
+  padding: 0 9px; /* même que la barre */
+  box-sizing: border-box;
+}
+.simulateur .sliders input[type="range"] {
+    width: 100%;
 }
 
 .slider {
@@ -422,6 +430,8 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
   background: #a7c5ff;
   border-radius: 5px;
   outline: none;
+  padding: 0 9px; /* moitié du thumb */
+  box-sizing: border-box;
 }
 
 .slider::-webkit-slider-thumb {
@@ -431,6 +441,7 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
   background: var(--couleur-primaire-bleu);
   border-radius: 50%;
   cursor: pointer;
+  margin-top: -6px;
 }
 
 .resultat {

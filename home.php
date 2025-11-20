@@ -25,7 +25,7 @@ Pour commencer, vous pouvez faire une simulation rapide de vos performances act
 	<p>Et pour terminer, nous vous proposons un forum dédié aux étudiants, un espace d’échange et de partage.
 Vous pourrez y poser vos questions, partager vos expériences, trouver des conseils pratiques et bénéficier du soutien d’étudiants qui vivent les mêmes défis que vous.
 C’est l’endroit idéal pour obtenir une aide complémentaire, trouver de la motivation et avancer ensemble vers de meilleures performances académiques.</p>
-	<a class="bouton_bleu" href="forum.php">Forum</a>
+	<a class="bouton_bleu" href="/Orga/forum/forum.php">Forum</a>
 	</div>	
 
 	 <img id="page_accueil" src="images/image_accueil.png" alt="accueil" >
