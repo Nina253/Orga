@@ -30,14 +30,44 @@ foreach ($boulot as $row) {
         <h2> Graphiques d'évolution :</h2>
     <div class="barre4">
         <h3>Graphique 1 : Evolution des notes</h3>
+        <div class="no-data-message">
+            Il n'y a pas de données pour le moment.
+        </div>
+        <canvas id="myChart" style="margin-bottom:50px;"></canvas>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <div class="barre4">
+        <h3>Graphique 2 : Evolution d ?</h3>
+        <div class="no-data-message" >
+            Il n'y a pas de données pour le moment.
+        </div>
+    </div>
+    <h2>Résultats : </h2>
+    <ul>
+        <li> Augmentation des notes</li>
+        <li> Votre sommeil a évolué de ..%</li>
+        <li> Point fort : </li>
+        <li> Point faible : </li>
+    </ul>
+    <h2>Améliorations à prévoire :</h2>
+    <ul>
+        <li> Diminuer le temps passé sur le téléphone</li>
+    </ul>
 
-<canvas id="myChart" style="margin-bottom:50px;"></canvas>
-<script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
 document.addEventListener('DOMContentLoaded', () => {
     const dates = <?php echo json_encode($dates); ?>;
     const notes = <?php echo json_encode($notes); ?>;
+    const message = document.getElementsByClassName('no-data-message')[0];
+    const chartCanvas = document.getElementById('myChart');
+
+    if (dates.length === 0 || notes.length === 0) {
+        chartCanvas.style.display = 'none';
+        message.style.display = 'block';
+        return;
+    }
 
     new Chart(document.getElementById('myChart'), {
         type: 'line',
@@ -67,21 +97,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-    </div>
-    <div class="barre4">
-        <h3>Graphique 2 : Evolution d ?</h3>
-        <img src="images/graphique_autre.png" alt="Graphique de " >   
-    </div>
-    <h2>Résultats : </h2>
-    <ul>
-        <li> Augmentation des notes</li>
-        <li> Votre sommeil a évolué de ..%</li>
-        <li> Point fort : </li>
-        <li> Point faible : </li>
-    </ul>
-    <h2>Améliorations à prévoire :</h2>
-    <ul>
-        <li> Diminuer le temps passé sur le téléphone</li>
-    </ul>
 </body>
 </html>
