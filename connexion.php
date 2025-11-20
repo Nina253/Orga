@@ -1,44 +1,42 @@
 <?php
 	session_start();
-	require "bd.php";
 
 
-	/*
-	if( !isset($_POST['email']) || !isset($_POST['mdp'])){
-		echo json_encode(['success' => 'vide', 'message' => 'Données manquantes']);
-		exit;
-	}
-	*/
+	$_SESSION["mail"]=$_POST["email"];
+	$_SESSION["mdp"]=$_POST["mdp"];
+	$_SESSION["num"]=$_POST["num"];
 
-	$email = isset($_POST['email']) ? $_POST['email'] : '';
-	$mdp  = isset($_POST['mdp']) ? $_POST['mdp'] : '';
-
-	if (!empty($email) && !empty($mdp)) {
-    	$bdd = getBD();
-
-    	$stmt = $bdd->prepare("SELECT * FROM utilisateurs WHERE mail = ?");
-    	$stmt->execute([$email]);
-    	$user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    	if ($user && password_verify($mdp, $user['mdp'])) {
-    		$_SESSION['client'] = ['id' => $user['id_user'], 'email' => $user['mail'],'nom' => $user['nom'],'prenom' => $user['prenom']];
-
-        	// TOKEN
-        	if (empty($_SESSION['token'])) {
-          	  $_SESSION['token'] = bin2hex(random_bytes(32));
-      		  }
-
-          	echo json_encode(['success' => true, 'message' => 'Connexion réussie']);
-        	exit;
-    	} else {
-        	echo json_encode(['success' => false, 'message' => 'Mot de passe ou identifiant invalide']);
-         	exit;
-        }
-  	} else {
-    	echo json_encode(['success' => false, 'message' => 'Champs vide']);
-    	exit;
+	if(isset($_SESSION['mail'])&&isset($_SESSION['mdp'])){
+		
+			require "bd.php";
+			$bdd=getBD(); 
+			$repR= $bdd->prepare("SELECT nom, prenom FROM etudiant WHERE mail = ?");
+			$repR->execute([$_SESSION['mail']]);
+			$verf = $repR->fetch();
+			$rep= $bdd->prepare("SELECT * FROM etudiant WHERE mail = ?");
+ 			$rep->execute([$_SESSION['mail']]);
+			$utl = $rep->fetch();
+		
+			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
+				$_SESSION['client'] = ['id' => $utl['id_etu']] ;
+				if($verf['nom']==''||$verf['prenom']==''){
+					echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
+				} else{
+					$_SESSION["nom"]=$verf['nom'];
+					$_SESSION["prenom"]=$verf['prenom'];
+					echo '<meta http-equiv="refresh" content="0;compte.php"/>';
+				}
+				die;
+			} else{
+				echo '<meta http-equiv="refresh" content="0;connecter.php"/>';
+				die;
+			}
+	} else{
+			echo '<meta http-equiv="refresh" content="0;connexion.php"/>';
+			die;
 	}
 ?>
+
 
 
 
