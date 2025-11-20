@@ -11,7 +11,7 @@
     <?php include "navbar.php" ?>
 
 
-	<h1>Bienvenue dans l'univers Orga+</h1>
+	<h1 id="h1_ac">Bienvenue dans l'univers Orga+</h1>
 	<div class="conteneur">
 	<div class="text">
 	<h3>Ton guide pour mieux t’organiser et réussir</h3>
@@ -21,7 +21,7 @@ De plus, vous pourrez enregistrer et suivre quotidiennement votre évolution.
 Pour commencer, vous pouvez faire une simulation rapide de vos performances actuelles en cliquant ci-dessous :</p>
 	<a class="bouton_bleu" href="simulateur.php">Simulateur de performance</a>
 	<p>Vous pouvez également commencer immédiatement en remplissant le questionnaire, qui vous permettra d’obtenir des conseils personnalisés en cliquant ci-dessous: </p>
-	<a class="bouton_bleu" href="<?if (isset($_SESSION['client'])){echo "questionnaire";}else{echo "connecter";}?>.php">Questionnaire</a>
+<a class="bouton_bleu" href="<?php if (isset($_SESSION['client'])){echo 'questionnaire.php';}else{echo 'connecter.php';} ?>">Questionnaire</a>
 	<p>Et pour terminer, nous vous proposons un forum dédié aux étudiants, un espace d’échange et de partage.
 Vous pourrez y poser vos questions, partager vos expériences, trouver des conseils pratiques et bénéficier du soutien d’étudiants qui vivent les mêmes défis que vous.
 C’est l’endroit idéal pour obtenir une aide complémentaire, trouver de la motivation et avancer ensemble vers de meilleures performances académiques.</p>
