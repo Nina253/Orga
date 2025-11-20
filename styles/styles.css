@@ -1,7 +1,7 @@
 :root {
   --couleur-primaire-vert: #C6FF8F;
   --couleur-secondaire-vert: #74b239; 
-  --couleur-primaire-bleu: #5BA2FF;  
+  --couleur-primaire-bleu: #006FFF;  
   --couleur-secondaire-bleu: #1f5bab;      
 }
 
@@ -40,21 +40,22 @@ body{
     box-shadow: none;    	
 }
 
-.bouton_noir{
-	width: 150px;
+.bouton_noir {
+  width: 150px;
+  height: 40px;
   background-color: black;
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 15px;
   text-align: center;
-  vertical-align: middle;
-  margin-left:30px;
+  line-height: 40px; 
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 .bouton_bleu{
 width: 200px;
-  background-color: blue;
+  background-color: var(--couleur-primaire-bleu);
   color: white;
   border: none;
   border-radius: 10px;
@@ -65,7 +66,7 @@ width: 200px;
 }
 .bouton_bleu2{
 width: 350px;
-  background-color:#006FFF;
+  background-color:var(--couleur-primaire-bleu);
   color: white;
   border: none;
   border-radius: 10px;
@@ -82,7 +83,7 @@ display: block;
   width: 200px;
   margin: 0 auto; /* centre horizontalement */
   margin-bottom: 50px;
-  background-color: #006FFF;
+  background-color: var(--couleur-primaire-bleu);
   color: white;
   border: none;
   border-radius: 10px;
@@ -93,7 +94,7 @@ display: block;
 }
 .bouton_retour:hover{
   background-color: white ;
-  color: #006FFF;
+  color: var(--couleur-primaire-bleu);
 }
 
 
@@ -164,6 +165,7 @@ footer {
 	  padding:0 3% 0 1%; 
     height: 70px;
     line-height: 70px;
+    margin-top: 30px;
     background: linear-gradient(to right,#5BA2FF,#C6FF8F);
     box-sizing: border-box;
     position: relative;    
@@ -184,6 +186,9 @@ h1{
 	margin-bottom:30px;
 }
 
+#hcompte{
+    padding-top: 0px;
+}
 
 h3{
 	font-size:30px;
@@ -266,7 +271,7 @@ form p {margin-top:50px;}
 
 .suivant{
 	width: 200px;
-  background-color: blue;
+  background-color: var(--couleur-primaire-bleu);
   color: white;
   border: none;
   border-radius: 10px;
@@ -423,7 +428,7 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
   appearance: none;
   width: 18px;
   height: 18px;
-  background: #1e63ff;
+  background: var(--couleur-primaire-bleu);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -522,6 +527,10 @@ h2{text-align:center;font-family: sans-serif;font-size:25px;margin-bottom:70px;}
     height: 110px;
     border-radius: 50%;
 }
+.profile{
+padding-top: 100px;
+
+}
 
 h1 {
     font-size: 35px;
@@ -554,7 +563,7 @@ h1 {
     width: 80%;
     margin: auto;
     font-size: 15px;
-    background-color: #1e8cff;
+    background-color: #var(--couleur-primaire-bleu);
     color: white;
     border: none;
     border-radius: 8px;
@@ -564,7 +573,7 @@ h1 {
 }
 
 .left button:hover {
-    background-color: #0f6edb;
+    background-color: var(--couleur-secondaire-bleu);
 }
 
 /* RIGHT SIDE */
@@ -580,7 +589,7 @@ h1 {
 
 /* Calendar card */
 .calendar {
-    background: #007bff;
+    background: var(--couleur-primaire-bleu);
     padding: 20px;
     border-radius: 10px;
     color: white;
@@ -669,7 +678,7 @@ h1 {
   background-color: white;
 }
 #bouton_bleu_nouveau_sujet:hover{
-	color:#006FFF;
+	color:var(--couleur-primaire-bleu);
 	background-color:white;
 }
 
@@ -677,7 +686,7 @@ h1 {
 display: block;
   width: 200px;
   margin: 0 auto; /* centre horizontalement */
-  background-color: #006FFF;
+  background-color: var(--couleur-primaire-bleu);
   color: white;
   border: none;
   border-radius: 10px;
@@ -721,7 +730,7 @@ border: none;
 }
 
 .btn_like_comm:hover{
-background-color: #006FFF;
+background-color: var(--couleur-primaire-bleu);
 }
 
 #liste_sujets{
@@ -763,7 +772,7 @@ display: flex;
 }
 
 textarea + button {
-    background-color: #006FFF;
+    background-color: var(--couleur-primaire-bleu);
     color: white;
     border: none;
     border-radius: 5px;
@@ -796,7 +805,7 @@ textarea + button {
 
 }
 #footer_forum {
-    width: 100vw;           /* largeur totale de la fenêtre */
+    width: 100vw;       
     margin-left: -60px;
     padding: 0 20px;        /* padding interne, pas de margin */
     height: 70px;

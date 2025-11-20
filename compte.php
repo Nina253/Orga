@@ -17,7 +17,7 @@
 
     <div class="profile">
         <img src="images/perso.jpg" alt="perso">
-        <h1>Bienvenu <?echo $_SESSION['prenom'];?></h1>
+        <h1 id="hcompte">Bienvenue<?echo $_SESSION['prenom'];?></h1>
         <p class="subtitle">Que souhaites-tu faire:</p>
     </div>
 
@@ -27,28 +27,22 @@
             <div class='bloc'>  <a href="tableau_bord.php">Accéder à mon tableau de bord</a> </div>
             <div class='bloc'>  <a href="questionnaire.php">Faire le questionnaire</a> </div>
             <div class='bloc'>  <a href="calendrier.php">Accéder à mon calendrier</a> </div>
-            <div class='bloc'>  <a href="forum.php">Accéder au forum</a> </div>
-            <button>Accéder à mes articles publiés dans le forum</button>
+            <div class='bloc'>  <a href="forum/forum.php">Accéder au forum</a> </div>
+            <div class='bloc'> <a href="forum/mesSujets.php">Accéder à mes articles publiés dans le forum</a></div>
             <div class='bloc'>  <a href="profil.php">Accéder / Modifier mes données personnelles</a> </div>
         </div>
 
         <div class="right">
-            <div class="calendar">
-                <h3>Octobre</h3>
-                
-            </div>
-
-            <div class="today">
-                <h4>Aujourd'hui :</h4>
-                <ul>
-                    <li>enregistre tes habitudes</li>
-                    <li>autre tâches de programmées</li>
-                </ul>
-            </div>
+            <?php include 'calendrier.php'; ?>
         </div>
 
     </div>
 
 </div>
+<footer>
+	<img class="logo" src="images/logo.png" alt="logo" >
+	
+	<a href="nous.php" >Qui sommes-nous ?</a>
+	</footer>
 </body>
 </html>

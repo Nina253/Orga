@@ -27,7 +27,7 @@ $base = '/Orga';
 
     <?php if (isset($_SESSION['client'])): ?>
       <a href="/Orga/compte.php" class="btn btn-green">Mon compte</a>
-	  <a href="/Orga/deconnexion.php" class="btn btn-green">Se déconnecter</a>
+	    <a class="bouton_noir" href="/Orga/deconnexion.php" >Se déconnecter</a>
     <?php else: ?>
 
       <a class="bloc connexion" href="/Orga/connecter.php">Se connecter</a>
