@@ -103,7 +103,8 @@
 	<input type="button" value="Publier" onclick="publier(event)">
     <div id="message" ></div>
     </form>
-    <a class="bouton_retour" href="forum.php">Retour</a>
+    <button class="bouton_retour" onclick="history.back()">Retour</button>
+
 
 
 <footer>
