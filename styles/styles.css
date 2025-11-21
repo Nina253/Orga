@@ -20,7 +20,7 @@ html, body{
 }
 
 body{
-	background-color:#F5EBFF;
+	background-color:white;
 	font-family: Arial;
 	margin: 0; 
 	z-index: 0;
@@ -574,7 +574,7 @@ h1 {
     width: 80%;
     margin: auto;
     font-size: 15px;
-    background-color: #var(--couleur-primaire-bleu);
+    background-color: var(--couleur-primaire-bleu);
     color: white;
     border: none;
     border-radius: 8px;
@@ -827,3 +827,51 @@ textarea + button {
     left: 0;
 }
 
+
+#nous_page{ 
+  background-image: url(../images/photo_nous.jpg); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  margin: 0; 
+  padding: 0; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  position: relative; 
+} 
+  
+#nous_page h1{ 
+  color: white; 
+  font-size: 4rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  text-align: left; 
+  margin-top : 20px;
+  font-weight: bold; 
+}
+  
+#nous_page p{
+  font-weight: bold;
+  font-size: 20px;
+  color:white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+#nous_page ul{
+  color : white;
+  padding: 0; 
+  margin: 20px 0 0 0; 
+}
+
+#nous_page .logo{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#nav_nous {
+  background-color: transparent;
+  backdrop-filter: none;
+}
