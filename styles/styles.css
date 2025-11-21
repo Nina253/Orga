@@ -870,3 +870,8 @@ textarea + button {
   top: 20px;
   left: 20px;
 }
+
+#nav_nous {
+  background-color: transparent;
+  backdrop-filter: none;
+}
