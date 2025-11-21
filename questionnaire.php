@@ -16,7 +16,7 @@
 		
 		<h2 class='h'>Tes Habitudes</h2>
 		
-		<form action="quest2.php" method="post">
+		<form action="questionnaire_2.php" method="post">
 		
 			<p><strong>1. Combien de temps, en heures, passes-tu sur les réseaux sociaux (par jour) ?</strong></p>
 				<input class="barre" type="number" step="0.1" name="tps" max="24" min="0" required>
