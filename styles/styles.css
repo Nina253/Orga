@@ -856,6 +856,7 @@ textarea + button {
   font-weight: bold;
   font-size: 20px;
   color:white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
 }
 
 #nous_page ul{
