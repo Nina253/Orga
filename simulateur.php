@@ -9,7 +9,7 @@
     $(document).ready(function() {
 
         $.ajax({
-            url: 'http://localhost:8888/Orga/donnees/coeffs.json',
+            url: 'donnees/coeffs.json',
             dataType: 'json',
             success: function(coeffs) {
                 console.log("AJAX success, coeffs =", coeffs);
