@@ -25,7 +25,7 @@
 			<p><strong>2. Quelle est ta moyenne générale ?</strong></p>
 			<input class="barre" type="number" step="0.1" name="moy" required>
 			<br>
-		
+
 			<button type="submit" class="suivant">Suivant</button>
 			
 		</form>

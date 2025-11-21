@@ -19,7 +19,8 @@
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
 				$_SESSION['client'] = ['id' => $utl['id_etu']] ;
-				if($verf['nom']==''||$verf['prenom']==''){
+				if($verf['nom']==''||$verf['prenom']==''||$verf['age']==NULL||
+				$verf['genre']==''||$verf['niveau_educ_parents']==''){
 					echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';
 				} else{
 					$_SESSION["nom"]=$verf['nom'];

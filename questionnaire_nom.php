@@ -1,3 +1,4 @@
+<?session_start();?>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
@@ -37,6 +38,22 @@
 			</label>
 			<br>
 			
+			<p><strong>3. Ton niveau d'éducation parentale</strong></p>
+			<label class="lign">
+			  <input type="radio" name="lvl" value="High School"> Lycée
+			</label>
+			
+			<label class="lign">
+			  <input type="radio" name="lvl" value="Bachelor"> Bachelier
+			</label>
+			
+			<label class="lign">
+			  <input type="radio" name="lvl" value="Master"> Master
+			</label>
+
+			<label class="lign">
+			  <input type="radio" name="lvl" value="None"> Autre
+			</label>
 			<button type="submit" class="suivant">Valider</button>
 		</form>
 		
