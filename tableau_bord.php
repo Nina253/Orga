@@ -25,7 +25,9 @@ foreach ($boulot as $row) {
 </head>
 <body>
     <?php include 'navbar.php'; ?>
+    
     <h1>Tableau de bord</h1>
+    <?php echo $_SESSION['client']['id']; ?>
     <p>Suis ton évolution personnelle au cours du temps sur ce tableau de bord</p>
         <h2> Graphiques d'évolution :</h2>
     <div class="barre4">

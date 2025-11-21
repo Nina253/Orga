@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +40,9 @@
 
 </div>
 <footer>
-	<img class="logo" src="images/logo.png" alt="logo" >
-	
-	<a href="nous.php" >Qui sommes-nous ?</a>
-	</footer>
+    <img class="logo" src="images/logo.png" alt="logo" >
+
+    <a href="nous.php" >Qui sommes-nous ?</a>
+    </footer>
 </body>
 </html>
