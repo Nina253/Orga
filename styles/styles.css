@@ -622,16 +622,19 @@ h1 {
     margin-bottom: 5px;
 }
 
-                                                  /* TABLEAU DE BORD */
-
+                                    /* ======================== TABLEAU DE BORD  ======================= */
  
 #myChart1 {
-  
-    width: 70%;  
-    height: 100%;
-    display: block;
-    margin: 0 auto 20px auto; /* espace en bas pour sous-titre ou légende */
+    width: 100%;           
+    max-width: 700px;     
+    height: 400px;         
+    margin: 20px auto;     
+    background-color: #f8f9fa; 
+    border-radius: 12px;   
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    padding: 15px;         
 }
+
 .barre4 {
     background-color: #a4bd8e;
     margin-top: 10px  ;
@@ -658,11 +661,77 @@ h1 {
 
 .barre4 + .barre4 {
     margin-top: 40px;
+
+}
+
+/* in fo_detaille */
+#formStat{
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+
+/* Label */
+form#formStat label {
+    font-weight: 600;
+    color: #333;
+    margin-right: 5px;
+}
+
+/* Select */
+form#formStat select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-size: 16px;
+    transition: border 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Effet au focus */
+form#formStat select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.4);
+    outline: none;
+}
+
+/* Conteneur du graphique */
+#chartDetail {
+    width: 100%;         
+    height: 100%;        
+    max-width: 100%;
+
+    margin: 0 auto;    
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+/* Message "pas de données" centré et stylé */
+.no-data-message {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin: 30px 0;
+    font-style: italic;
+}
+
+.box_graph{
+  margin: 20px auto; 
+  width:60%;
+}
+
+#stat{
+  margin-top: 0;
+  padding-top: 80px;
 }
 
 
 
-/* ======================== Forum ======================= */
+
+                                    /* ======================== Forum ======================= */
 /* Titres des champs */
 #formulaire_nouveau_sujet p {
     margin: 10px 0 5px 0;

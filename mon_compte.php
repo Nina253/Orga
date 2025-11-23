@@ -11,7 +11,7 @@
 		<img class="perso2" src="images/perso.jpg" alt="logo">
 		<h1>Bienvenu 'ajouter php'</h1>
 		<p>Que souhaites-tu faire:</p>
-		<a class="bouton_bleu2" href="tableau_de_bord.php">Accéder à mon tableau de bord</a><br>
+		<a class="bouton_bleu2" href="tableau_de_bord/tableau_de_bord.php">Accéder à mon tableau de bord</a><br>
 		<a class="bouton_bleu2" href="questionnaire_nom.php">Faire le questionnaire</a><br>
 		<a class="bouton_bleu2" href="calendrier.php">Accéder à mon calendrier</a><br>
 		<a class="bouton_bleu2" href="mes_publications.php">Accéder à mes articles publiés dans le forum</a><br>

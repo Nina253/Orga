@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['client'])){
+    header('Location: ../connecter.php');
+    exit;
+}
 require '../bd.php';
 $bdd=getBD(); 
 $hab= $bdd->prepare("SELECT duree_sommeil , date_hab ,duree_reseaux FROM habitudes WHERE id_etu = ?");
@@ -50,6 +54,8 @@ foreach ($boulot as $row) {
 
 
     <h2>Résultats : </h2>
+
+    <div class='bloc'> <a href='info_detaille.php'> acceder au detailes</a></div>
     <ul>
         <li> Augmentation des notes</li>
         <li> Votre sommeil a évolué de ..%</li>
