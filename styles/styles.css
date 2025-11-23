@@ -574,7 +574,7 @@ h1 {
     width: 80%;
     margin: auto;
     font-size: 15px;
-    background-color: #var(--couleur-primaire-bleu);
+    background-color: var(--couleur-primaire-bleu);
     color: white;
     border: none;
     border-radius: 8px;
@@ -625,13 +625,29 @@ h1 {
                                                   /* TABLEAU DE BORD */
 
  
-#myChart {
+#myChart1 {
   
-    width: 70% !important;
-    height:300px !important; /* hauteur fixe visible */
+    width: 70%;  
+    height: 100%;
     display: block;
     margin: 0 auto 20px auto; /* espace en bas pour sous-titre ou légende */
 }
+.barre4 {
+    background-color: #a4bd8e;
+    margin-top: 10px  ;
+    
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+/* Assurer que le canvas prend bien toute la hauteur */
+.barre4 canvas {
+    width: 100% !important;
+    height: 350px !important;
+    display: block;
+}
+
 
 .barre4 p {
     text-align: center;

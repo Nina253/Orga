@@ -19,7 +19,7 @@ $base = '/Orga';
 
   <div class="nav-droite">
     <?php if (isset($_SESSION['client'])){ ?>
-      <a href="/Orga/tableau_bord.php">Tableau de Bord</a>
+      <a href="/Orga/tableau_de_bord/tableau_bord.php">Tableau de Bord</a>
       <?php
     };
     ?>
