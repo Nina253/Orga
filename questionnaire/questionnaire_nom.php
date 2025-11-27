@@ -1,13 +1,12 @@
-<?session_start();?>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" > 
+		<link rel="stylesheet" href="../styles/styles.css" type="text/css" media="screen" > 
         <title>Questionnaire</title>
     </head>
 	<body>
 		
-    <?php include "navbar.php" ?>
+    <?php include "../navbar.php" ?>
 
 
 		<h1>Questionnaire</h1>
@@ -38,30 +37,15 @@
 			</label>
 			<br>
 			
-			<p><strong>3. Ton niveau d'éducation parentale</strong></p>
-			<label class="lign">
-			  <input type="radio" name="lvl" value="High School"> Lycée
-			</label>
-			
-			<label class="lign">
-			  <input type="radio" name="lvl" value="Bachelor"> Bachelier
-			</label>
-			
-			<label class="lign">
-			  <input type="radio" name="lvl" value="Master"> Master
-			</label>
-
-			<label class="lign">
-			  <input type="radio" name="lvl" value="None"> Autre
-			</label>
 			<button type="submit" class="suivant">Valider</button>
 		</form>
 		
 		<footer>
-			<img class="logo" src="images/logo.png" alt="logo" >
-			<a href="nous.html" >Qui sommes nous</a>
+			<img class="logo" src="../images/logo.png" alt="logo" >
+			<a href="../nous.html" >Qui sommes nous</a>
 		</footer>
 		
 		
 	</body>
 </html>
+
