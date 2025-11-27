@@ -28,11 +28,7 @@
 			<p><strong>3. As-tu un travail en plus de tes études ?</strong></p>
 			
 			<label class="lign">
-			  <input type="radio" name="travail" value="oui"> Oui, la semaine et le week-end
-			</label>
-			
-			<label class="lign">
-			  <input type="radio" name="travail" value="ouiwk"> Oui, le week-end
+			  <input type="radio" name="travail" value="oui"> Oui
 			</label>
 			
 			<label class="lign">
