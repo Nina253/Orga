@@ -21,7 +21,7 @@
 
     <div class="profile">
         <img src="images/perso.jpg" alt="perso">
-        <h1 id="hcompte" style='font-family: "Montserrat"'>Bienvenue<?echo $_SESSION['prenom'];?></h1>
+        <h1 id="hcompte" style='font-family: "Montserrat"'>Bienvenue <?echo $_SESSION['prenom'];?></h1>
         <p class="subtitle">Que souhaites-tu faire ?</p>
     </div>
 
