@@ -38,15 +38,17 @@ foreach ($boulot as $row) {
 
 <div class="barre4">
     <h3>Graphique 1 : Evolution du sommeil</h3>
+
     <?php if (empty($duree_sommeil) || empty($dates)) : ?>
         <div class="no-data-message">Il n'y a pas de données pour le moment.</div>
+    <?php else : ?>
+        <canvas id="myChart1"></canvas>
     <?php endif; ?>
-    
-</div>
-<canvas id="myChart1"></canvas>
 
-<div class="barre4">
-    <h3>Graphique 2 : Evolution du temps passer sur les reseaux Sociaux</h3>
+</div>
+
+<div class="barre4" style="margin-top: 80px;">
+        <h3>Graphique 2 : Evolution du temps passé sur les réseaux sociaux</h3>
     <?php if (empty($duree_reseaux) || empty($dates)) : ?>
         <div class="no-data-message">Il n'y a pas de données pour le moment.</div>
     <?php endif; ?>
@@ -55,7 +57,7 @@ foreach ($boulot as $row) {
 
     <h2>Résultats : </h2>
 
-    <div class='bloc'> <a href='info_detaille.php'> acceder au detailes</a></div>
+    <div class='bloc'> <a href='info_detaille.php'>Accéder aux details</a></div>
     <ul>
         <li> Augmentation des notes</li>
         <li> Votre sommeil a évolué de ..%</li>
