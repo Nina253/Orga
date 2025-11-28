@@ -12,27 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new Chart(document.getElementById('myChart'), {
         type: 'line',
-        data: {
-            labels: dates,
-            datasets: [{
-                label: "Notes en fonction des dates",
-                data: notes.map(Number), // convertit en nombres
-                borderWidth: 2,
-                borderColor: "blue",
-                fill: false,
-                tension: 0.2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    suggestedMin: Math.min(...notes) - 1,
-                    suggestedMax: Math.max(...notes) + 1
-                }
+            data: { id_photo: id_photo },
+            success: function(response) {
+                console.log("Réponse serveur:", response);
+                $("#currentPhoto").attr("src", "images/profiles/" + filename);
+            },
+            error: function() {
+                alert("Erreur lors de la mise à jour de la photo.");
             }
-        }
+        });
     });
+
+
+    $("#formPrenom").submit(function(e) {
+        e.preventDefault();
+        update("prenom", $("#prenom").val(), "#msgPrenom");
+    });
+
+    $("#formNom").submit(function(e) {
+        e.preventDefault();
+        update("nom", $("#nom").val(), "#msgNom");
+    });
+
+
 });
