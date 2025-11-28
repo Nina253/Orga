@@ -12,21 +12,21 @@
     <?php include "../navbar.php" ?>
 
 
-		<h1>Questionnaire</h1>
+		<h1 style='font-family: "Montserrat"'>Questionnaire</h1>
 		
-		<h2 class='h'>Tes Habitudes Scolaires</h2>
+		<h2 class='h' style='font-family: "Montserrat"'>Tes Habitudes Scolaires</h2>
 		
 		<form action="questionnaire_2.php" method="post">
 		
-			<p><strong>1. Quel est ton pourcentage de présence ?</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>1. Quel est ton pourcentage de présence ?</p>
 			<input class="barre" type="number" name="presence" required>
 			<br>
 			
-			<p><strong>2. Quelle est ta moyenne générale ?</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>2. Quelle est ta moyenne générale ?</p>
 			<input class="barre" type="number" step="0.1" name="moy" required>
 			<br>
 		
-			<button type="submit" class="suivant">Suivant</button>
+			<button type="submit" class="suivant" style='font-family: "Silk Serif";font-size: 18px;'>Suivant</button>
 			
 		</form>
 		

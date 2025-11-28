@@ -12,20 +12,20 @@
     <?php include "../navbar.php" ?>
 
 
-		<h1>Questionnaire</h1>
+		<h1 style='font-family: "Montserrat"'>Questionnaire</h1>
 		
-		<h2 class='h'>Tes Habitudes</h2>
+		<h2 class='h' style='font-family: "Montserrat"'>Tes Habitudes</h2>
 		
 		<form action="quest2.php" method="post">
 		
-			<p><strong>1. Combien de temps, en heures, passes-tu sur les réseaux sociaux (par jour) ?</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>1. Combien de temps, en heures, passes-tu sur les réseaux sociaux (par jour) ?</p>
 				<input class="barre" type="number" step="0.1" name="tps" max="24" min="0" required>
 			<br>
 			
-			<p><strong>2. Combien de temps, en heures, passes-tu sur Netflix ?</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>2. Combien de temps, en heures, passes-tu sur Netflix ?</p>
 			<input class="barre" type="number" step="0.1" name="netflix" max="24" min="0" required>
 			<br>
-			<p><strong>3. As-tu un travail en plus de tes études ?</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>3. As-tu un travail en plus de tes études ?</p>
 			
 			<label class="lign">
 			  <input type="radio" name="travail" value="oui"> Oui
@@ -36,7 +36,7 @@
 			</label>
 			<br>
 			
-			<button type="submit" class="suivant">Suivant</button>
+			<button type="submit" class="suivant" style='font-family: "Silk Serif";font-size: 18px;'>Suivant</button>
 			
 		</form>
 		

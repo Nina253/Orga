@@ -9,21 +9,21 @@
     <?php include "../navbar.php" ?>
 
 
-		<h1>Questionnaire</h1>
-		<p class='c'>C’est parti pour améliorer tes performance, commence par remplir le questionnaire ci-dessous</p>
-		<h2 class='h'>Qui es-tu ?</h2>
+		<h1 style='font-family: "Montserrat"'>Questionnaire</h1>
+		<p class='c'>C’est parti pour améliorer tes performances ! Commence par ceci...</p>
+		<h2 class='h' style='font-family: "Montserrat"'>Qui es-tu ?</h2>
 		
 		<form class="quest" action="quest1.php" method="post">
-			<p><strong>1. Ton prénom</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>1. Ton prénom</p>
 			<input class="barre" type="text" name="prenom" required>
 
-			<p><strong>2. Ton nom</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>2. Ton nom</p>
 			<input class="barre" type="text" name="nom" required>
 			
-			<p><strong>2. Ta date de naissance</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>3. Ta date de naissance</p>
 			<input class="barre" type="date" name="date" required>
 			
-			<p><strong>3. Ton genre</strong></p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>4. Ton genre</p>
 			<label class="lign">
 			  <input type="radio" name="genre" value="femme"> Femme
 			</label>
@@ -37,7 +37,7 @@
 			</label>
 			<br>
 			
-			<button type="submit" class="suivant">Valider</button>
+			<button type="submit" class="suivant" style='font-family: "Silk Serif";font-size: 18px;'>Valider</button>
 		</form>
 		
 		<footer>
