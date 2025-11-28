@@ -39,13 +39,13 @@
 			
 			<button type="submit" class="suivant">Valider</button>
 		</form>
-		
-		<footer>
-			<img class="logo" src="../images/logo.png" alt="logo" >
-			<a href="../nous.html" >Qui sommes nous</a>
-		</footer>
-		
-		
+	<br></br>
+	<br></br>
+	<br>
+	<footer>
+		<img class="logo" src="../images/logo.png" alt="logo" >
+		<a href="../nous.html" >Qui sommes nous</a>
+	</footer>
 	</body>
 </html>
 

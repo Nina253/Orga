@@ -39,7 +39,7 @@ foreach ($resultats as $row) {
 <body>
 <?php include '../navbar.php'; ?>
 
-<h1 id='stat'>Statistiques détaillées</h1>
+<h1 id='stat' style='font-family: "Montserrat"'>Statistiques détaillées</h1>
 
 <form method="get" id="formStat">
     <label for="stat">Choisir une statistique :</label>
