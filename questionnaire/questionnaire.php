@@ -36,7 +36,7 @@
 			</label>
 			<br>
 			
-			<button type="submit" class="suivant" style='font-family: "Silk Serif";font-size: 18px;'>Suivant</button>
+			<button type="submit" class="suivant">Suivant</button>
 			
 		</form>
 		

@@ -37,7 +37,7 @@
 			</label>
 			<br>
 			
-			<button type="submit" class="suivant" style='font-family: "Silk Serif";font-size: 18px;'>Valider</button>
+			<button type="submit" class="suivant">Valider</button>
 		</form>
 		
 		<footer>

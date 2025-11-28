@@ -63,7 +63,10 @@ width: 200px;
   text-align: center;
   margin:3px;
   display:inline-block;
+  font-family: "Silk Serif";
+  font-size: 18px;
 }
+
 .bouton_bleu2{
 width: 350px;
   background-color:var(--couleur-primaire-bleu);
@@ -91,6 +94,8 @@ display: block;
   cursor: pointer;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Silk Serif'; 
+  font-size:18px;
 }
 .bouton_retour:hover{
   background-color: white ;
@@ -280,6 +285,8 @@ form p {margin-top:50px;}
   text-align: center;
   display:block;
 	margin-left:auto;margin-right:auto;margin-top:25px;
+  font-family: "Silk Serif";
+  font-size: 18px;
 }
 .quest{
 	border:red dotted 2px;
@@ -510,6 +517,9 @@ margin-bottom: 30px;
 
 
 .txt_intro{
+  text-align: center;
+  font-family: serif; 
+  font-size: 20px;
   text-align: center;
 }
 
@@ -966,3 +976,4 @@ textarea + button {
   background-color: transparent;
   backdrop-filter: none;
 }
+

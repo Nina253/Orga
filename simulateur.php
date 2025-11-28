@@ -103,7 +103,7 @@
 
     </div>
 </div>
-    <a class="bouton_retour" href="questionnaire_nom.php" style='font-family: Silk Serif; font-size:18px'>Obtenir des conseils personnalisés</a>
+    <a class="bouton_retour" href="questionnaire/questionnaire_nom.php">Obtenir des conseils personnalisés</a>
 
 <footer>
     <img class="logo" src="images/logo.png" alt="logo">

@@ -89,7 +89,7 @@
 </head>
 <body >
     <?php include "../navbar.php";?>
-    <h1>Nouveau sujet</h1>
+    <h1 style='font-family: "Montserrat"'>Nouveau sujet</h1>
     <p class="txt_intro">Pose ta question</p>
 
 
@@ -100,7 +100,7 @@
     <input type="text" name="titre">
     <p>Contenu</p>
     <textarea id="contenu" name="contenu" rows="6" required></textarea><br><br>
-	<input type="button" value="Publier" onclick="publier(event)">
+	<input type="button" value="Publier" onclick="publier(event)" style='font-family: "Silk Serif";font-size: 18px;'>
     <div id="message" ></div>
     </form>
     <button class="bouton_retour" onclick="history.back()">Retour</button>
