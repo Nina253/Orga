@@ -27,11 +27,20 @@ $images = glob("images/profiles/*.jpg");
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="script.js"></script>
 <style>
-.profile-container { display: flex; justify-content: space-between; align-items: flex-start; }
-.profile-image { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; }
-.photo-selector img { width: 70px; height: 70px; object-fit: cover; cursor: pointer; margin: 5px; border: 2px solid transparent; border-radius: 50%; }
-.photo-selector img.selected { border-color: green; }
-</style>
+        .profile-container { display: flex; justify-content: space-between; align-items: flex-start; padding: 20px; }
+        .profile-image { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #ddd; }
+        .photo-selector { margin-top: 20px; }
+        .photo-selector img { 
+            width: 70px; height: 70px; 
+            object-fit: cover; cursor: pointer; margin: 5px; 
+            border: 3px solid transparent; border-radius: 50%; 
+            transition: transform 0.2s;
+        }
+        .photo-selector img:hover { transform: scale(1.1); }
+        .photo-selector img.selected { border-color: green; transform: scale(1.1); }
+        .pfl { margin-bottom: 20px; }
+        .msg-info { font-weight: bold; margin-left: 10px; }
+    </style>
 </head>
 <body>
 
@@ -62,14 +71,18 @@ $images = glob("images/profiles/*.jpg");
     <!-- PHOTO DE PROFIL -->
     <div class="profile-photo">
         <h3>Photo de profil actuelle</h3>
-        <img id="currentPhoto" src="images/profiles/<?= htmlspecialchars($user['photo'] ?? 'default.jpg') ?>" class="profile-image">
+        <img id="currentPhoto" src="<?= htmlspecialchars($_SESSION['client']['url']) ?>"  class="profile-image">
+
 
         <div class="photo-selector">
             <h4>Changer de photo</h4>
-            <?php foreach($images as $img): 
-                $imgName = basename($img);
-            ?>
-                <img src="<?= $img ?>" data-filename="<?= $imgName ?>" class="<?= ($user['photo'] == $imgName) ? 'selected' : '' ?>">
+            <?php foreach($images as $index => $img): 
+                 $imgName = basename($img);
+                ?>
+                <img src="<?= $img ?>" 
+                data-filename="<?= $imgName ?>" 
+                data-id="<?= $index +1 ?>" 
+                class="<?= (($_SESSION['client']['id_photo']-1) == $index) ? 'selected' : '' ?>">
             <?php endforeach; ?>
         </div>
     </div>

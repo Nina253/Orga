@@ -24,4 +24,4 @@ if (empty($value)) {
 $req = $bdd->prepare("UPDATE etudiant SET $field = ? WHERE id_etu = ?");
 $req->execute([htmlspecialchars($value), $id]);
 
-echo "✔️ Modification enregistrée !";
+echo "Modification enregistrée !";

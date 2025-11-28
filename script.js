@@ -17,18 +17,26 @@ $(document).ready(function() {
         });
     }
 
-    
-    $(".photo-selector img").click(function() {
-        let filename = $(this).data("filename");
 
+    
+     $(".photo-selector img").click(function() {
+
+        let id_photo = $(this).data("id");      
+        let filename = $(this).data("filename"); 
         $(".photo-selector img").removeClass("selected");
         $(this).addClass("selected");
 
-        $.post("update_photo.php", { photo: filename }, function(response) {
-            console.log("Réponse serveur:", response);
-            $("#currentPhoto").attr("src", "images/profiles/" + filename);
-        }).fail(function() {
-            alert("Erreur lors de la modification de la photo");
+        $.ajax({
+            url: "update_photo.php",
+            type: "POST",
+            data: { id_photo: id_photo },
+            success: function(response) {
+                console.log("Réponse serveur:", response);
+                $("#currentPhoto").attr("src", "images/profiles/" + filename);
+            },
+            error: function() {
+                alert("Erreur lors de la mise à jour de la photo.");
+            }
         });
     });
 
