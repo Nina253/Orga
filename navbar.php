@@ -19,18 +19,18 @@ $base = '/Orga';
 
   <div class="nav-droite">
     <?php if (isset($_SESSION['client'])){ ?>
-      <a href="/Orga/tableau_de_bord/tableau_bord.php">Tableau de Bord</a>
+      <a href="/Orga/tableau_de_bord/tableau_bord.php" style='font-family: "Silk Serif";font-size: 18px;'>Tableau de Bord</a>
       <?php
     };
     ?>
-    <a href="/Orga/forum/forum.php">Forum</a>
+    <a href="/Orga/forum/forum.php" style='font-family: "Silk Serif";font-size: 18px;'>Forum</a>
 
     <?php if (isset($_SESSION['client'])): ?>
-      <a href="/Orga/compte.php" class="btn btn-green">Mon compte</a>
-	    <a class="bouton_noir" href="/Orga/utilisateur/deconnexion.php" >Se déconnecter</a>
+      <a href="/Orga/compte.php" class="btn btn-green" style='font-family: "Silk Serif";font-size: 18px;'>Mon compte</a>
+	    <a class="bouton_noir" href="/Orga/utilisateur/deconnexion.php" style='font-family: "Silk Serif"; font-size: 17px;'>Se déconnecter</a>
     <?php else: ?>
 
-      <a class="bloc connexion" href="/Orga/utilisateur/connecter.php">Se connecter</a>
+      <a class="bloc connexion" href="/Orga/utilisateur/connecter.php" style='font-family: "Silk Serif";font-size: 17px;'>Se connecter</a>
     <?php endif; ?>
   </div>
 </nav>
