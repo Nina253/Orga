@@ -12,12 +12,12 @@
 		
 		<div>	
 			<form class="insc" action="connexion.php" method="post">
-				<h2>Se connecter</h2>
-				Email<br>
+				<h2 style='font-family: "Montserrat"'>Se connecter</h2>
+				<label>Email</label>
 				<input class="barre3" type="text" name="email" placeholder="ex: xyz@gmail.com"required><br>
-				Mot de passe<br>
+				<label>Mot de passe</label>
 				<input class="barre3" type="password" name="mdp" required>
-				<a class="mdpt" href="mdp_oublie.php">mot de passe oublié ?</a>
+				<em><a class="mdpt" href="mdp_oublie.php">Mot de passe oublié ?</a></em>
 				<button type="submit" class="bouton_noir2">Connexion</button>
 				
 
