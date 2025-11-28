@@ -16,7 +16,7 @@ $req = $bdd->prepare("SELECT prenom, nom, mail FROM etudiant WHERE id_etu = ?");
 $req->execute([$id]);
 $user = $req->fetch();
 
-$images = glob("images/profiles/*.jpg"); 
+$images = glob("../images/profiles/*.jpg"); 
 ?>
 
 <html lang="fr">
@@ -71,8 +71,7 @@ $images = glob("images/profiles/*.jpg");
     <!-- PHOTO DE PROFIL -->
     <div class="profile-photo">
         <h3>Photo de profil actuelle</h3>
-        <img id="currentPhoto" src="<?= htmlspecialchars($_SESSION['client']['url']) ?>"  class="profile-image">
-
+        <img id="currentPhoto" src="../<?= htmlspecialchars($_SESSION['client']['url']) ?>"  class="profile-image">
 
         <div class="photo-selector">
             <h4>Changer de photo</h4>
