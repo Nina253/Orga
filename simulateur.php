@@ -103,7 +103,7 @@
 
     </div>
 </div>
-    <a class="bouton_retour" href="questionnaire/questionnaire_nom.php">Obtenir des conseils personnalisés</a>
+    <a class="bouton_retour" href="utilisateur/connecter.php">Obtenir des conseils personnalisés</a>
 
 <?php include "navbarBas.php" ?>
 </body>

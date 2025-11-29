@@ -80,7 +80,7 @@ if ($evoSommeil < 0) {
 </head>
 <body>
     <?php include '../navbar.php'; ?>
-    <h1 style='font-family: "Arial Rounded MT Bold", sans-serif;'>Tableau de bord</h1> 
+    <h1 style='font-family: "Montserrat"''>Tableau de bord</h1> 
     <p style='font-family: serif; font-size: 20px; color: grey; text-align : center; word-spacing: 4px;'>Suis ton évolution personnelle au cours du temps sur ce tableau de bord</p> 
     <br> 
     <h2 style='font-family: "Arial Rounded MT Bold", sans-serif; text-decoration: underline;'> Graphiques d'évolution :</h2>
@@ -103,7 +103,7 @@ if ($evoSommeil < 0) {
 <canvas id="myChart2"></canvas>
 
 <br></br>
-<div class='bloc' style='font-family: "Liberation Serif"'> <a href='info_detaille.php'>Accéder aux details</a></div>
+<div id='bloc_tab'> <a href='info_detaille.php'>Accéder aux details</a></div>
 <br></br>
 <h2 style='font-family: "Arial Rounded MT Bold", sans-serif; text-decoration: underline;'>Résultats :</h2>
 
