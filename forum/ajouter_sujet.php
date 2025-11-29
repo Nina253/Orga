@@ -107,10 +107,6 @@
 
 
 
-<footer>
-	<img class="logo" src="../images/logo.png" alt="logo" >
-	
-	<a href="../nous.php" >Qui sommes-nous ?</a>
-	</footer>
+    <?php include "../navbarBas.php" ?>
 </body>
 </html>

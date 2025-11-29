@@ -69,8 +69,7 @@ foreach ($boulot as $row) {
     <ul>
         <li> Diminuer le temps passé sur le téléphone</li>
     </ul>
-
-
+    <br></br>
 
 
 <script>
@@ -155,11 +154,5 @@ new Chart(ctx2, {
 });
 
 </script>
-
-
-
-    
-    
-
 </body>
 </html>

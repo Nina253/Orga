@@ -43,10 +43,8 @@
     </div>
 
 </div>
-<footer>
-	<img class="logo" src="images/logo.png" alt="logo" >
-	
-	<a href="nous.php" >Qui sommes-nous ?</a>
-	</footer>
+<br></br>
+<br>
+<?php include "navbarBas.php" ?>
 </body>
 </html>

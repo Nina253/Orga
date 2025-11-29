@@ -33,10 +33,7 @@
 			<button type="submit">modifier</button>
 		</form>
 		
-		<footer class="pied">
-			<img class="logo" src="images/logo.png" alt="logo" >
-			<a href="nous.html" >Qui sommes nous</a>
-		</footer>
+		<?php include "navbarBas.php" ?>
 		
 		<img class="perso" src="images/perso.jpg" alt="logo">
 		

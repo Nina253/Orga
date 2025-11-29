@@ -105,9 +105,6 @@
 </div>
     <a class="bouton_retour" href="questionnaire/questionnaire_nom.php">Obtenir des conseils personnalisés</a>
 
-<footer>
-    <img class="logo" src="images/logo.png" alt="logo">
-    <a href="nous.html">Qui sommes nous</a>
-</footer>
+<?php include "navbarBas.php" ?>
 </body>
 </html>
