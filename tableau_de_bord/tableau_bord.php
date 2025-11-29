@@ -95,13 +95,15 @@ if ($evoSommeil < 0) {
 <canvas id="myChart1"></canvas>
 
 <div class="barre4">
-    <h3>Graphique 2 : Evolution du temps passer sur les reseaux Sociaux</h3>
+    <h3>Graphique 2 : Evolution du temps passé sur les réseaux sociaux</h3>
     <?php if (empty($duree_reseaux) || empty($dates)) : ?>
         <div class="no-data-message">Il n'y a pas de données pour le moment.</div>
     <?php endif; ?>
 
 <canvas id="myChart2"></canvas>
 
+<br></br>
+<div class='bloc' style='font-family: "Liberation Serif"'> <a href='info_detaille.php'>Accéder aux details</a></div>
 <br></br>
 <h2 style='font-family: "Arial Rounded MT Bold", sans-serif; text-decoration: underline;'>Résultats :</h2>
 
