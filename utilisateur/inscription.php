@@ -11,12 +11,12 @@
 		
 			
 			<form class="insc" action="enregistrement.php" method="post">
-				<h2>Créer un compte</h2>
-				Email<br>
+				<h2 style='font-family: "Montserrat"'>Créer un compte</h2>
+				<label>Email</label>
 				<input class="barre3" type="text" name="email" placeholder="ex: xyz@gmail.com" required><br>
-				Numéro de téléphone<br>
+				<label>Numéro de téléphone</label>
 				<input class="barre3" type="text" name="num" placeholder="ex: 0641414141" required><br>
-				Mot de passe<br>
+				<label>Mot de passe</label>
 				<input class="barre3" type="password" name="mdp" required>
 				<button type="submit" class="bouton_noir2">S'inscrire</button>
 			</form>

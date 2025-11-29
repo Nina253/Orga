@@ -30,10 +30,6 @@
 
 	 <img id="page_accueil" src="images/image_accueil.png" alt="accueil" >
 	</div>
-	<footer>
-	<img class="logo" src="images/logo.png" alt="logo" >
-	
-	<a href="nous.php" style='font-family: "Silk Serif";font-size: 18px;'>Qui sommes-nous ?</a>
-	</footer>
+	<?php include "navbarbas.php" ?>
     </body>
 </html>
