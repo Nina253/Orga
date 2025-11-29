@@ -180,7 +180,7 @@ function supprimerSujet(id_sujet){
 
 </head>
 <body>
-    <h1>Mes articles publiés</h1>
+    <h1 style='font-family: "Montserrat"'>Mes articles publiés</h1>
     <p class="txt_intro">Consulte tous les articles que tu as rédigés </p>
 
     <?php if(isset($_SESSION["client"])){
@@ -230,6 +230,6 @@ function supprimerSujet(id_sujet){
 <footer id="footer_forum">
     <img class="logo" src="../images/logo.png" alt="logo">
     <a href="../nous.php">Qui sommes-nous ?</a>
+</footer>
 </body>
-
 </html>

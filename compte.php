@@ -1,5 +1,9 @@
 <?php 
 	session_start();
+    if (!isset($_SESSION['client'])){
+        header('Location: home.php');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +20,9 @@
     <div class="container">
 
     <div class="profile">
-        <img src="images/perso.jpg" alt="perso">
-        <h1 id="hcompte">Bienvenue<?echo $_SESSION['prenom'];?></h1>
-        <p class="subtitle">Que souhaites-tu faire:</p>
+        <img src="<?php echo $_SESSION['client']['url']?>" alt="perso">
+        <h1 id="hcompte" style='font-family: "Montserrat"'>Bienvenue <?echo $_SESSION['prenom'];?></h1>
+        <p class="subtitle">Que souhaites-tu faire ?</p>
     </div>
 
     <div class="content">
@@ -26,10 +30,10 @@
         <div class="left">
             <div class='bloc'>  <a href="tableau_bord.php">Accéder à mon tableau de bord</a> </div>
             <div class='bloc'>  <a href="questionnaire.php">Faire le questionnaire</a> </div>
-            <div class='bloc'>  <a href="calendrier/monCalendrier.php">Accéder à mon calendrier</a> </div>
+            <div class='bloc'>  <a href="calendrier.php">Accéder à mon calendrier</a> </div>
             <div class='bloc'>  <a href="forum/forum.php">Accéder au forum</a> </div>
             <div class='bloc'> <a href="forum/mesSujets.php">Accéder à mes articles publiés dans le forum</a></div>
-            <div class='bloc'>  <a href="profil.php">Accéder / Modifier mes données personnelles</a> </div>
+            <div class='bloc'>  <a href="profil/profil.php">Accéder / Modifier mes données personnelles</a> </div>
         </div>
 
         <div class="right">
@@ -39,10 +43,8 @@
     </div>
 
 </div>
-<footer>
-	<img class="logo" src="images/logo.png" alt="logo" >
-	
-	<a href="nous.php" >Qui sommes-nous ?</a>
-	</footer>
+<br></br>
+<br>
+<?php include "navbarBas.php" ?>
 </body>
 </html>

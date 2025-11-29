@@ -171,11 +171,11 @@ function supprimerSujet(id_sujet){
 
 </head>
 <body>
-    <h1>Bienvenue sur le forum</h1>
-    <p class="txt_intro">Discutez avec d’autres personnes de vos difficultés d’organisation</p>
+    <h1 style='font-family: "Montserrat"'>Bienvenue sur le forum</h1>
+    <p class="txt_intro" style='font-family: serif; font-size: 20px; color: grey; text-align : center; word-spacing: 4px;'>Discutez avec d’autres personnes de vos difficultés d’organisation</p>
 
     <?php if(isset($_SESSION["client"])){
-        echo '<a id="bouton_bleu_nouveau_sujet" href="ajouter_sujet.php">Nouveau sujet</a>';
+    echo '<a id="bouton_bleu_nouveau_sujet" href="ajouter_sujet.php" style="font-family: \'Silk Serif\', serif; font-size:18px;">Nouveau sujet</a>';
     }
     ?>
 
