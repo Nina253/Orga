@@ -14,8 +14,7 @@
 			$bdd=getBD(); 
 		
 
-			$repR= $bdd->prepare("SELECT nom, prenom FROM etudiant WHERE mail = ?");
-			$repR->execute([$_SESSION['mail']]);
+			$repR= $bdd->prepare(" SELECT e.nom, e.prenom, p.url AS url , p.id_photo AS id_photo FROM etudiant e JOIN photo p ON e.id_photo = p.id_photo WHERE e.mail = ?");			$repR->execute([$_SESSION['mail']]);
 			$verf = $repR->fetch();
 			$rep= $bdd->prepare("SELECT * FROM etudiant WHERE mail = ?");
  			$rep->execute([$_SESSION['mail']]);
@@ -23,8 +22,7 @@
 			
 		
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
-				$_SESSION['client'] = ['id' => $utl['id_etu']] ;
-				if($verf['nom']==''||$verf['prenom']==''){
+				$_SESSION['client'] = ['id' => $utl['id_etu'] ,  'id_photo' => $verf['id_photo'] ,  'url' => $verf['url']  ] ;				if($verf['nom']==''||$verf['prenom']==''){
 					echo '<meta http-equiv="refresh" content="0;../questionnaire/questionnaire_nom.php"/>';
 				} else{
 					$_SESSION["nom"]=$verf['nom'];
