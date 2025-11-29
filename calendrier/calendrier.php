@@ -1,4 +1,7 @@
 <!-- calendrier.php -->
+ <?php
+$id_etudiant=$_SESSION['client']['id'];
+ ?>
 <section class="calendar-card">
   <div class="cal-header">
     <button class="prev" aria-label="Mois précédent">&lt;</button>
@@ -132,6 +135,7 @@
 </style>
 
 <script>
+  let idEtu = "<?php echo $id_etudiant; ?>";
 function initCalendar(container){
   const monthNames = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
   const calGrid = container.querySelector('.cal-grid');
@@ -172,9 +176,11 @@ function initCalendar(container){
       if(thisDate.toDateString() === selectedDate.toDateString()) el.classList.add('selected');
 
       el.addEventListener('click',()=>{
-        selectedDate = thisDate;
-        render(currentMonth,currentYear);
-      });
+  selectedDate = thisDate;
+  const dateKey = selectedDate.toLocaleDateString('fr-CA'); // format YYYY-MM-DD
+  showEvents(dateKey);
+  render(currentMonth,currentYear);
+});
       calGrid.appendChild(el);
     }
 
@@ -205,4 +211,27 @@ function initCalendar(container){
 document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.calendar-card').forEach(initCalendar);
 });
+
+function showEvents(dateKey){
+  const title = container.querySelector('#selected-date-title');
+  const ul = container.querySelector('#event-list');
+
+  title.textContent = "Le " + dateKey;
+  ul.innerHTML = "<li>Chargement...</li>";
+
+  fetch("events.php?action=get&date="+dateKey+"&id_etu="+idEtu)
+  .then(r=>r.json())
+  .then(data=>{
+      ul.innerHTML = "";
+      if(data.length === 0){
+        ul.innerHTML = "<li>Aucun événement.</li>";
+      }else{
+        data.forEach(ev=>{
+          let li = document.createElement("li");
+          li.innerHTML = `<strong>${ev.titre}</strong> - ${ev.description ?? ""}`;
+          ul.appendChild(li);
+        });
+      }
+  });
+}
 </script>

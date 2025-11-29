@@ -221,6 +221,7 @@ function supprimerSujet(id_sujet){
 <footer id="footer_forum">
     <img class="logo" src="../images/logo.png" alt="logo">
     <a href="../nous.php">Qui sommes-nous ?</a>
+    </footer>
 </body>
 
 </html>
