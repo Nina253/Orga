@@ -541,7 +541,8 @@ margin-bottom: 30px;
 /*  BLOC */
 
 .bloc {
-  margin-left: 41%;
+  font-family: "Liberation Serif";
+  margin-left: 33%;
   margin-top: 10px;
   display: inline-block;   
   background-color: var(--couleur-primaire-bleu);
@@ -585,7 +586,19 @@ margin-bottom: 30px;
   background-color: rgb(94, 88, 88);
 }
 
-
+#bloc_tab{
+  font-family: "Liberation Serif";
+  margin-left: 44%;
+  margin-top: 10px;
+  display: inline-block;   
+  background-color: var(--couleur-primaire-bleu);
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease; 
+}
 
 .txt_intro{
   text-align: center;

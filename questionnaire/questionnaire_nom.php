@@ -21,7 +21,7 @@
 			<input class="barre" type="text" name="nom" required>
 			
 			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>3. Ta date de naissance</p>
-			<input class="barre" type="date" name="date" required>
+			<input class="barre" type="date" name="date" required max="<?= date('Y-m-d') ?>">
 			
 			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>4. Ton genre</p>
 			<label class="lign">

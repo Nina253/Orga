@@ -103,7 +103,7 @@
 
     </div>
 </div>
-    <a class="bouton_retour" href="questionnaire/questionnaire_nom.php">Obtenir des conseils personnalisés</a>
+    <a class="bouton_retour" href="<?php if (!isset($_SESSION['client'])){echo 'utilisateur/connecter.php';}else{echo 'questionnaire/questionnaire.php';}?>">Obtenir des conseils personnalisés</a>
 
 <?php include "navbarBas.php" ?>
 </body>
