@@ -308,7 +308,7 @@ z-index: 1;
 
 
 form {
-	width:600px;height:80%;
+	width:650px;
 	margin-left:auto;margin-right:auto; 
 }
 
@@ -1082,3 +1082,19 @@ textarea + button {
   backdrop-filter: none;
 }
 
+.formu{
+  height:1650px;
+  padding-top:5px;
+  background-color:rgb(241, 241, 241);
+}
+
+.formu2{
+  height:400px;
+  padding-top:5px;
+  background-color:rgb(241, 241, 241);
+}
+
+.qblock{
+  background-color:rgb(220, 220, 220);
+  padding-bottom:5px;
+}
