@@ -78,5 +78,44 @@ if(!isset($_SESSION['token'])) {
 
 
 
+
+
+
+<script>
+function publier(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('formulaire_ajout_evt');
+    const formData = new FormData(form);
+
+    // On envoie les données à PHP pour mise à jour
+    fetch('modifier_freq_evt.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(async r => {
+        const text = await r.text();
+        try {
+            return JSON.parse(text);
+        } catch(e) {
+            console.error("Réponse invalide:", text);
+            throw e;
+        }
+    })
+    .then(data => {
+        const messageDiv = document.getElementById('message');
+        if(data.success){
+            messageDiv.innerHTML = "<span style='color:green;'>Fréquence mise à jour !</span>";
+        } else {
+            messageDiv.innerHTML = "<span style='color:red;'>Erreur : " + (data.error || "Inconnue") + "</span>";
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        document.getElementById('message').innerHTML = "<span style='color:red;'>Erreur serveur</span>";
+    });
+}
+</script>
+
 </body>
 </html>
