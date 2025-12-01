@@ -341,7 +341,9 @@ form p {margin-top:50px;}
   font-size: 18px;
 }
 .quest{
-	border:red dotted 2px;
+	height:850px;
+  padding-top:5px;
+  background-color:rgb(241, 241, 241);
 }
 input{
 	padding-left:10px;
