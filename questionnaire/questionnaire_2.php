@@ -16,14 +16,14 @@
 		
 		<h2 class='h' style='font-family: "Montserrat"'>Tes Habitudes Scolaires</h2>
 		
-		<form action="questionnaire_2.php" method="post">
+		<form action="quest_3.php" method="post">
 		
-			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>1. Quel est ton pourcentage de présence ?</p>
+			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>1. A combien estimes-tu ton pourcentage de présence ?</p>
 			<input class="barre" type="number" name="presence" required>
 			<br>
 			
 			<p style='font-family: "Inter", sans serif; font-size:18px;font-weight : bolder'>2. Quelle est ta moyenne générale ?</p>
-			<input class="barre" type="number" step="0.1" name="moy" required>
+			<input class="barre" type="number" step="0.01" name="moy" max="20" required>
 			<br>
 		
 			<button type="submit" class="suivant">Suivant</button>
