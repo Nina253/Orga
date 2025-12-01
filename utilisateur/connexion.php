@@ -20,9 +20,16 @@
  			$rep->execute([$_SESSION['mail']]);
 			$utl = $rep->fetch();
 			
-		
+			$repidhab= $bdd->prepare("SELECT id_hab FROM habitudes WHERE id_etu=? ORDER BY id_hab DESC LIMIT 1; ");			
+			$repidhab->execute([$utl['id_etu']]);
+			$idhab = $repidhab->fetch();
+			
+			$repidsco= $bdd->prepare("SELECT id_scolarite FROM scolarite WHERE id_etu=? ORDER BY id_scolarite DESC LIMIT 1; ");			
+			$repidsco->execute([$utl['id_etu']]);
+			$idsco = $repidsco->fetch();
+
 			if (password_verify($_SESSION['mdp'],$utl['mdp'])){
-				$_SESSION['client'] = ['id' => $utl['id_etu'] ,  'id_photo' => $verf['id_photo'] ,  'url' => $verf['url']  ] ;				if($verf['nom']==''||$verf['prenom']==''){
+				$_SESSION['client'] = ['id' => $utl['id_etu'] ,  'id_photo' => $verf['id_photo'] ,  'url' => $verf['url'] ,'id_hab'=>$idhab['id_hab'] ,'id_scolarite'=>$idsco['id_scolarite']] ;				if($verf['nom']==''||$verf['prenom']==''){
 					echo '<meta http-equiv="refresh" content="0;../questionnaire/questionnaire_nom.php"/>';
 				} else{
 					$_SESSION["nom"]=$verf['nom'];
