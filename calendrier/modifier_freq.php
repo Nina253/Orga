@@ -57,12 +57,12 @@ if(!isset($_SESSION['token'])) {
         <input type="button" value="Modifier" onclick="publier(event)">
         <div id="message" ></div>
         </form>
-        <button class="bouton_retour" onclick="history.back()">Retour</button>
         </div>
           
     </div>
 </div>
 
+        <button class="bouton_retour" onclick="history.back()">Retour</button>
 
 
 

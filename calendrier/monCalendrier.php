@@ -26,19 +26,19 @@ $bdd = getBD();
       <?php include 'calendrier.php'; ?>
     </div>
 
-```
+
 <div class="right">
   <div class="today-info" id="page-today-info">
     <h3 id="page-selected-date-title">Aucune date sélectionnée</h3>
     <ul id="page-event-list">
-      <li>enregistre tes habitudes</li>
-      <li>autres tâches programmées</li>
+      <li>chargement</li>
     </ul>
   </div>
-  <a class="bouton_retour" href="ajouter_evt.php">Ajoute des événements à ton calendrier</a>
-  <a class="bouton_retour" href="modifier_freq.php">Modifie la fréquence de tes enregistrements</a>
+  <div id="centrage_boutons">
+  <a class="bouton_bleu" href="ajouter_evt.php">Ajoute des événements à ton calendrier</a>
+  <a class="bouton_bleu" href="modifier_freq.php">Modifie la fréquence de tes enregistrements</a>
 </div>
-```
+</div>
 
   </div>
 </div>
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 data.forEach(ev => {
                     const li = document.createElement("li");
-                    li.innerHTML = `<strong>${ev.titre}</strong>${ev.description ? " - " + ev.description : ""}`;
+                    li.innerHTML = `<strong>${ev.titre}</strong>${ev.description ? "<br>" + ev.description : ""}`;
                     pageList.appendChild(li);
                 });
             }

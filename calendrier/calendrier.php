@@ -123,7 +123,7 @@ $id_etudiant = $_SESSION['client']['id'];
     padding-left: 0;
 }
 .calendar-card .today-info h3 {
-    color: #0b1a3d;
+    color: white;
     margin: 10px 0 6px 0;
     font-size: 1rem;
 }
@@ -133,8 +133,9 @@ $id_etudiant = $_SESSION['client']['id'];
     list-style: disc;
 }
 .calendar-card .today-info li {
-    margin: 8px 0;
-    color: #111;
+    margin: 0px 0;
+    color: white;
+    text-align:left;
 }
 
 /* Responsive */
@@ -274,7 +275,7 @@ function showEvents(dateKey){
         } else {
             data.forEach(ev => {
                 let li = document.createElement("li");
-                li.innerHTML = `<strong>${ev.titre}</strong> - ${ev.description ?? ""}`;
+                li.innerHTML = `<strong>${ev.titre}</strong><br>${ev.description ?? ""}`;
                 ul.appendChild(li);
             });
         }
