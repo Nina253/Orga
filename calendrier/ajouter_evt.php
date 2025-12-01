@@ -31,29 +31,29 @@ if(!isset($_SESSION['token'])) {
         <div class="left">
             <?php include 'calendrier.php'; ?>
         </div>
+
         <div class="right">
         <form id="formulaire_ajout_evt" action="enregistrer_evt.php" method="post">
         <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">        
         <div>
-        <p>Sélectionne la date</p>
+        <p>Sélectionne la date:</p>
         <input type="date" name="date">
         </div>
         <div>
-        <p>Titre de l'événement</p>
+        <p>Titre de l'événement:</p>
         <input type="text" name="titre_evt">
         </div>
         <div>
-        <p>Déscription de l'événement</p>
-        <input type="text" name="description_evt">
+        <p>Déscription de l'événement:</p>
+        <textarea name="description_evt"></textarea>
         </div>
-        <input type="button" value="Ajouter" onclick="publier(event)">
+        <input class="bouton_bleu" type="button" value="Ajouter" onclick="publier(event)">
         <div id="message" ></div>
         </form>
-        <button class="bouton_retour" onclick="history.back()">Retour</button>
         </div>
-          
     </div>
 </div>
+<button class="bouton_retour" onclick="history.back()">Retour</button>
 
 
 

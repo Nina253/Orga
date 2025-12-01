@@ -54,9 +54,9 @@ body{
 }
 
 .bouton_bleu{
-  width: 200px;
-  background-color: var(--couleur-primaire-bleu);
-  color: white;
+  width: 60%;
+  background: linear-gradient(to right, #5BA2FF, #C6FF8F);
+  color: black;
   border: none;
   border-radius: 10px;
   padding: 10px;
@@ -65,6 +65,10 @@ body{
   display:inline-block;
   font-family: "Silk Serif";
   font-size: 18px;
+}
+
+.bouton_bleu:hover{
+  transform: scale(1.10);
 }
 
 .bouton_bleu2{
@@ -619,7 +623,6 @@ margin-bottom: 30px;
 
 .container {
     width: 100%;
-
     margin-top: 20px;
     text-align: center;
 }
@@ -650,7 +653,8 @@ h1 {
     height: 500px;
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 35px;
+    
 }
 
 /* LEFT BUTTONS */
@@ -659,7 +663,7 @@ h1 {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    padding: 5%;
 }
 
 .left button {
@@ -682,11 +686,13 @@ h1 {
 
 /* RIGHT SIDE */
 .right {
-    width: 35%;
-    padding-right: 0;
-    padding-left: 20px;
-    margin-right: 50px;
+    width: 50%;
+    padding:5%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
+
 
 .left .bloc{
 
@@ -1099,4 +1105,40 @@ textarea + button {
 .qblock{
   background-color:rgb(220, 220, 220);
   padding-bottom:5px;
+}
+
+
+#page-selected-date-title{
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 0px;
+  margin-top: 0px;
+  color: white;
+}
+
+#page-event-list{
+text-align: left;
+color: white;
+margin-bottom: 0px;
+margin-left: 5%;
+}
+
+#page-today-info{
+  background-color: var(--couleur-primaire-bleu);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px 5px 20px 5px;
+}
+
+#formulaire_ajout_evt{
+  width: 100%
+}
+
+#centrage_boutons{
+display: flex;
+  flex-direction: column;  /* ou 'row' si tu veux côte à côte */
+  justify-content: center;  /* centre verticalement dans son bloc */
+  align-items: center; 
+  gap:20px;
+  height: 100%;     /* 
 }
