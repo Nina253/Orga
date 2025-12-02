@@ -42,6 +42,7 @@ $bdd = getBD();
 
   </div>
 </div>
+<button class="bouton_retour" onclick="history.back()">Retour</button>
 
 <footer id="footer_forum">
   <img class="logo" src="../images/logo.png" alt="logo">

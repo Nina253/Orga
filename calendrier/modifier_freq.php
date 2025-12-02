@@ -26,35 +26,38 @@ if(!isset($_SESSION['token'])) {
     <div class="container">
    
     <h1>Mon calendrier</h1>
-    <p class="txt_intro">Ajoute des événements a ton calendrier</p>
+    <p class="txt_intro">Modifie la fréquence des rappels pour remplir le questionnaire</p>
     <div class=content>
         <div class="left">
             <?php include 'calendrier.php'; ?>
         </div>
         <div class="right">
         <form id="formulaire_ajout_evt" action="enregistrer_evt.php" method="post">
+        <legend class="ajt_evt">Modifier la fréquence</legend>
         <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">        
         <div>
-        <p>Sélectionne la date</p>
+        <p>Sélectionne la date de début</p>
         <input type="date" name="date">
         </div>
-        <div>
-        <p>Indique la nouvelle fréquence souhaitée</p>
-        <div>
-        <input id="quoti" type="radio" name="nouv_freq" value=0>
-        <label for="quoti">Quotidienne (tous les jours)</label>
-        </div>
-        <div>
-            <input id="hebdo" type="radio" name="nouv_freq" value=1>
-            <label for="hebdo">Hebdomadaire (toute les semaines)</label>
-        </div>
-            <div>
-            <input id="mens" type="radio" name="nouv_freq" value=2>
-            <label for="mens">Mensuelle (tous les mois)</label>
-        </div>
-        </div>
+        <div class>
+        <p>Coche la nouvelle fréquence souhaitée:</p>
+        <div id="coche">
+  <div class="radio-container">
+    <input type="radio" id="quoti" name="nouv_freq" value="0">
+    <label for="quoti">Quotidienne (tous les jours)</label>
+  </div>
+  <div class="radio-container">
+    <input type="radio" id="hebdo" name="nouv_freq" value="1">
+    <label for="hebdo">Hebdomadaire (toutes les semaines)</label>
+  </div>
+  <div class="radio-container">
+    <input type="radio" id="mens" name="nouv_freq" value="2">
+    <label for="mens">Mensuelle (tous les mois)</label>
+  </div>
+</div>
+    </div>
         
-        <input type="button" value="Modifier" onclick="publier(event)">
+        <input id="btn_modif_cal" class="bouton_bleu" type="button" value="Modifier" onclick="publier(event)">
         <div id="message" ></div>
         </form>
         </div>
@@ -62,13 +65,9 @@ if(!isset($_SESSION['token'])) {
     </div>
 </div>
 
-        <button class="bouton_retour" onclick="history.back()">Retour</button>
 
 
-
-
-
-
+<button class="bouton_retour" onclick="history.back()">Retour</button>
 
 
 <footer id="footer_forum">

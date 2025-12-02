@@ -34,6 +34,7 @@ if(!isset($_SESSION['token'])) {
 
         <div class="right">
         <form id="formulaire_ajout_evt" action="enregistrer_evt.php" method="post">
+        <legend class="ajt_evt">Ajouter un événement</legend>
         <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">        
         <div>
         <p>Sélectionne la date:</p>
@@ -45,9 +46,9 @@ if(!isset($_SESSION['token'])) {
         </div>
         <div>
         <p>Déscription de l'événement:</p>
-        <textarea name="description_evt"></textarea>
+        <textarea id="text_cal" name="description_evt"></textarea>
         </div>
-        <input class="bouton_bleu" type="button" value="Ajouter" onclick="publier(event)">
+        <input  id="btn_ajout_cal" class="bouton_bleu" type="button" value="Ajouter" onclick="publier(event)">
         <div id="message" ></div>
         </form>
         </div>
