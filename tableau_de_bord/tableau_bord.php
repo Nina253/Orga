@@ -92,7 +92,7 @@ if ($evoSommeil < 0) {
     <?php endif; ?>
     
 </div>
-<canvas id="myChart1"></canvas>
+<canvas id="myChart1" class="graph"></canvas>
 
 <div class="barre4">
     <h3>Graphique 2 : Evolution du temps passé sur les réseaux sociaux</h3>
@@ -100,7 +100,7 @@ if ($evoSommeil < 0) {
         <div class="no-data-message">Il n'y a pas de données pour le moment.</div>
     <?php endif; ?>
 
-<canvas id="myChart2"></canvas>
+<canvas id="myChart2" class="graph"></canvas>
 
 <br></br>
 <div id='bloc_tab'> <a href='info_detaille.php'>Accéder aux details</a></div>
@@ -128,7 +128,7 @@ if ($evoSommeil < 0) {
 
     <li><strong>Points faibles :</strong></li>
     <?php foreach ($pointsFaibles as $pf): ?>
-        <li style="margin-left:20px;">❗ <?= $pf ?></li>
+        <li style="margin-left:20px;"> <?= $pf ?></li>
     <?php endforeach; ?>
 </ul>
 

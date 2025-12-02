@@ -28,12 +28,12 @@
     <div class="content">
 
         <div class="left">
-            <div class='bloc'>  <a href="tableau_de_bord/tableau_bord.php">Accéder à mon tableau de bord</a> </div>
-            <div class='bloc'>  <a href="questionnaire/questionnaire.php">Faire le questionnaire</a> </div>
-            <div class='bloc'>  <a href="calendrier/moncalendrier.php">Accéder à mon calendrier</a> </div>
-            <div class='bloc'>  <a href="forum/forum.php">Accéder au forum</a> </div>
-            <div class='bloc'> <a href="forum/mesSujets.php">Accéder à mes articles publiés dans le forum</a></div>
-            <div class='bloc'>  <a href="profil/profil.php">Accéder / Modifier mes données personnelles</a> </div>
+            <a href="tableau_de_bord/tableau_bord.php"> <div class='bloc'>  Accéder à mon tableau de bord </div> </a>
+            <a href="questionnaire/questionnaire.php"><div class='bloc'>  Faire le questionnaire </div></a>
+            <a href="calendrier/moncalendrier.php"><div class='bloc'>  Accéder à mon calendrier </div></a>
+            <a href="forum/forum.php"><div class='bloc'>  Accéder au forum </div></a>
+            <a href="forum/mesSujets.php"> <div class='bloc'> Accéder à mes articles publiés dans le forum</div></a>
+            <a href="profil/profil.php"><div class='bloc'>  Accéder / Modifier mes données personnelles </div></a>
         </div>
 
         <div class="right">

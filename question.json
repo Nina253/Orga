@@ -1,0 +1,76 @@
+[
+    { 
+        "id": 1, 
+        "name": "duree_travail", 
+        "texte": "Combien de temps, en heures, travailles-tu par jour ?", 
+        "type": "nombre", 
+        "min": 0, "max": 10, "step": 0.1 
+    },
+    { 
+        "id": 2, 
+        "name": "duree_reseaux", 
+        "texte": "Temps sur les réseaux sociaux ?", 
+        "type": "nombre", 
+        "min": 0, "max": 24, "step": 0.1 
+    },
+    { 
+        "id": 3, 
+        "name": "duree_netflix", 
+        "texte": "Temps sur Netflix ?", 
+        "type": "nombre", 
+        "min": 0, "max": 24, "step": 0.1 
+    },
+    { 
+        "id": 4, 
+        "name": "duree_sommeil", 
+        "texte": "Temps de sommeil ?", 
+        "type": "nombre", 
+        "min": 0, "max": 12, "step": 0.1 
+    },
+    { 
+        "id": 5, 
+        "name": "job", 
+        "texte": "Avez-vous un job ?", 
+        "type": "choix_unique", 
+        "options": [{"valeur": "Oui", "label": "Oui"}, {"valeur": "Non", "label": "Non"}] 
+    },
+    { 
+        "id": 6, 
+        "name": "nutrition", 
+        "texte": "Comment qualifirais-tu ta nutrition ?", 
+        "type": "choix_unique", 
+        "options": [
+            {"valeur": "Poor", "label": "Mauvaise"}, 
+            {"valeur": "Fair", "label": "Correcte"}, 
+            {"valeur": "Good", "label": "Bonne"}
+        ] 
+    },
+    { 
+        "id": 7, 
+        "name": "freq_sport", 
+        "texte": "Fréquence sport ?", 
+        "type": "nombre", 
+        "min": 0, "max": 7, "step": 1 
+    },
+    { 
+        "id": 8, 
+        "name": "sante_mentale", 
+        "texte": "Santé mentale (1-10) ?", 
+        "type": "nombre", 
+        "min": 1, "max": 10, "step": 1 
+    },
+    { 
+        "id": 9, 
+        "name": "parascolaire", 
+        "texte": "Activités parascolaires ?", 
+        "type": "choix_unique", 
+        "options": [{"valeur": "Oui", "label": "Oui"}, {"valeur": "Non", "label": "Non"}] 
+    },
+    { 
+        "id": 10, 
+        "name": "acces_internet", 
+        "texte": "Accès internet ?", 
+        "type": "choix_unique", 
+        "options": [{"valeur": "Mauvais", "label": "Mauvais"}, {"valeur": "Bon", "label": "Bon"}] 
+    }
+]

@@ -7,7 +7,7 @@
 
 
  *{
-  /*border: red 1px dotted;*/
+  border: red 1px dotted;
 	padding: 0px; 
 	margin: 0px;
 	font-size: 16px;
@@ -727,6 +727,16 @@ h1 {
                                     /* ======================== TABLEAU DE BORD  ======================= */
  
 #myChart1 {
+    width: 100%;           
+    max-width: 700px;     
+    height: 400px;         
+    margin: 20px auto;     
+    background-color: #f8f9fa; 
+    border-radius: 12px;   
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    padding: 15px;         
+}
+#myChart2 {
     width: 100%;           
     max-width: 700px;     
     height: 400px;         
