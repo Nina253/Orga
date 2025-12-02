@@ -43,7 +43,7 @@ body{
 .bouton_noir {
   width: 150px;
   height: 40px;
-  background-color: black;
+  background-color: var(--couleur-primaire-bleu);
   color: white;
   border: none;
   border-radius: 10px;
@@ -257,11 +257,14 @@ h1{
 #hcompte{
     padding-top: 0px;
 }
-
+#h3_acc{
+  text-align: center;
+}
 h3{
 	font-size:30px;
 	text-align: left;
 	margin:20px;
+  font-family: "Montserrat";
 }
 .text{
  width: 50%;
@@ -280,13 +283,13 @@ line-height:1.6;
     text-align:center;
 }
 #page_accueil {
-    width: 40%;        
-    float: right;      
-    height: auto;      
-    margin-left: 20px; 
-    margin-top: 100px;   
+    position: fixed;   /* reste fixe même en scroll */
+    top: 50%;          /* centre verticalement */
+    right: 30px;          /* colle à droite */
+    transform: translateY(-40%);
+    width: 45%;
+    height: auto;
 }
-
 .c{
 	text-align:center;
 	/* Ici tu peux modifier si tu le souhaites tes informations personnelles */
@@ -1240,3 +1243,4 @@ text-align: center;
 margin-bottom: -50px;
 margin-top: 50px;
 }
+
