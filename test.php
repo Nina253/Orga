@@ -11,10 +11,10 @@
     
     <style>
         body {
-            background-color: #e0e0e0;
+            background-color: white;
             background-image: radial-gradient(#d0d0d0 1px, transparent 1px);
             background-size: 20px 20px;
-            font-family: 'Patrick Hand', cursive; 
+            font-family: 'Kalam'; 
             margin: 0; padding: 0;
             min-height: 100vh;
             color: #2c3e50;
@@ -38,6 +38,7 @@
             padding: 50px 40px 50px 40px;
             width: 100%;
             max-width: 550px;
+            height: 450px;
             position: relative;
             z-index: 1;
             
@@ -79,7 +80,8 @@
         #question-text { 
             font-size: 28px;
             font-weight: 400;
-            margin-bottom: 35px; 
+            margin-bottom: 50px; 
+            margin-top: 20px;
             line-height: 1.3; 
             text-align: center;
         }
@@ -89,7 +91,7 @@
             border: none; 
             border-bottom: 2px solid #b0bec5; 
             background: transparent; 
-            font-family: 'Patrick Hand', cursive; 
+            font-family: 'Kalam'; 
             font-size: 22px; 
             box-sizing: border-box; color: #333;
             transition: border-color 0.3s;
@@ -100,7 +102,7 @@
             background-color: #d32f2f;
             color: white; padding: 12px; 
             border: none; cursor: pointer; 
-            font-family: 'Patrick Hand', cursive; 
+            font-family: 'Kalam'; 
             font-size: 24px;
             width: 100%; box-sizing: border-box;
             border-radius: 30px;
