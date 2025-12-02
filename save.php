@@ -20,7 +20,7 @@ try {
             throw new Exception("Données JSON invalides ou vides reçues.");
         }
 
-        // Liste des colonnes attendues
+        // Liste des colonnes xx
         $colonnes = [
             'duree_travail', 'duree_reseaux', 'duree_netflix', 
             'duree_sommeil', 'job', 'nutrition', 'freq_sport', 

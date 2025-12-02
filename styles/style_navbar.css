@@ -1,0 +1,117 @@
+   /* ===== NAVBAR ===== */
+	.navbar{
+	height: 75px;
+    display: flex;
+	position:fixed;
+	align-items: center;
+    justify-content: space-between;
+	top:0;
+	width:96%;
+	text-align: right;
+    line-height: 70px;       
+	padding:0 3% 0 1%; 
+  	background: linear-gradient(to right,#5BA2FF,#C6FF8F );
+    font-size: 30px;
+    z-index: 10;
+	}
+
+.nav-gauche img{
+      height: 100px; 
+    }
+
+    .nav-center {
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: Cursive;
+    }
+
+  .nav-droite img {
+    cursor: pointer;
+    height: 30px;
+    margin-left: 15px; 
+  }
+
+
+.nav-droite {
+  display: flex;
+  align-items: center; 
+  gap: 15px; }
+
+.navbarBas {
+    bottom: 0;            /* place la barre en bas */
+    left: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3% 0 1%;
+    background: linear-gradient(to right, #5BA2FF, #C6FF8F);
+    font-size: 30px;
+    line-height: 70px;   
+    z-index: 1000;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+}
+
+.nav-left,
+.nav-mid,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-mid {
+    flex: 1;     
+    justify-content: center;
+}
+
+/* gauche / droite */
+.nav-left {
+    gap: 12px;
+    padding-left: 8px;
+}
+.nav-right {
+    gap: 12px;
+    padding-right: 8px;
+}
+
+.logo-bas {
+    height: 55px; /* adapte si besoin */
+    display: block;
+}
+
+.nav-link {
+    font-family: "Silk Serif", serif;
+    font-size: 18px;
+    color: #111;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+.logo{
+	  float: left;
+    height: 70px;
+    width: auto;
+    margin-top: 0px; 
+    margin-right: 30px;
+    box-shadow: none;    	
+}
+a{
+ vertical-align: middle;
+ color:white;
+ text-decoration:none;
+}
+.bouton_noir {
+  width: 150px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 40px; 
+  margin-left: 30px;
+  cursor: pointer;
+}
