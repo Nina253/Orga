@@ -25,5 +25,7 @@
     </ul>
     </p>
     
+    <button class="bouton_retour" onclick="history.back()">Retour</button>
+
 </body>
 </html>

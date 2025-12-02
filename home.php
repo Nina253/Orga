@@ -32,5 +32,6 @@
 	 <img id="page_accueil" src="images/image_accueil.png" alt="accueil" >
 	</div>
 	<?php include "navbarbas.php" ?>
+	
     </body>
 </html>
