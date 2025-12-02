@@ -217,7 +217,7 @@ function supprimerSujet(id_sujet){
   
 </div>
 <?php endforeach; ?>
-
+<button class="bouton_retour" onclick="history.back()">Retour</button>
 <footer id="footer_forum">
     <img class="logo" src="../images/logo.png" alt="logo">
     <a href="../nous.php">Qui sommes-nous ?</a>

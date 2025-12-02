@@ -100,7 +100,7 @@
     <input type="text" name="titre">
     <p>Contenu</p>
     <textarea id="contenu" name="contenu" rows="6" required></textarea><br><br>
-	<input type="button" value="Publier" onclick="publier(event)" style='font-family: "Silk Serif";font-size: 18px;'>
+	<input class="bouton_bleu" type="button" value="Publier" onclick="publier(event)" style='font-family: "Silk Serif";font-size: 18px;'>
     <div id="message" ></div>
     </form>
     <button class="bouton_retour" onclick="history.back()">Retour</button>
