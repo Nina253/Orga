@@ -289,10 +289,11 @@ line-height:1.6;
 #page_accueil {
     position: fixed;   /* reste fixe même en scroll */
     top: 50%;          /* centre verticalement */
-    right: 30px;          /* colle à droite */
-    transform: translateY(-45%);
-    width: 45%;
+    right: 5%;          /* colle à droite */
+    transform: translateY(-40%);
+    width: 40%;
     height: auto;
+    max-width: 500px;
 }
 .c{
 	text-align:center;
