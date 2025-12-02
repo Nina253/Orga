@@ -92,7 +92,7 @@ if ($evoSommeil < 0) {
     <?php endif; ?>
     
 </div>
-<canvas id="myChart1"></canvas>
+<canvas id="myChart1" class="graph"></canvas>
 
 <div class="barre4">
     <h3>Graphique 2 : Evolution du temps passé sur les réseaux sociaux</h3>
@@ -100,7 +100,7 @@ if ($evoSommeil < 0) {
         <div class="no-data-message">Il n'y a pas de données pour le moment.</div>
     <?php endif; ?>
 
-<canvas id="myChart2"></canvas>
+<canvas id="myChart2" class="graph"></canvas>
 
 <br></br>
 <div id='bloc_tab'> <a href='info_detaille.php'>Accéder aux details</a></div>
@@ -110,26 +110,46 @@ if ($evoSommeil < 0) {
 <ul style='font-family:"Liberation Serif"; font-size:18px;'>
 
     <?php if ($evoSommeil !== null): ?>
-        <li>Ton sommeil a évolué de <strong><?= $evoSommeil ?>%</strong>.</li>
+    <?php 
+        $colorSommeil = $evoSommeil < 0 ? "red" : ($evoSommeil > 0 ? "green" : "black");
+    ?>
+    <li>
+        Ton sommeil a évolué de 
+        <strong style="color: <?= $colorSommeil ?>;">
+            <?= $evoSommeil ?>%
+        </strong>.
+    </li>
     <?php else: ?>
         <li>Pas assez de données pour analyser ton sommeil.</li>
     <?php endif; ?>
 
+
     <?php if ($evoReseaux !== null): ?>
-        <li>Ton temps sur les réseaux a évolué de <strong><?= $evoReseaux ?>%</strong>.</li>
+    <?php 
+        $colorReseaux = $evoReseaux < 0 ? "red" : ($evoReseaux > 0 ? "green" : "black");
+    ?>
+    <li>
+        Ton temps sur les réseaux a évolué de 
+        <strong style="color: <?= $colorReseaux ?>;">
+            <?= $evoReseaux ?>%
+        </strong>.
+    </li>
     <?php else: ?>
         <li>Pas assez de données pour analyser ton usage des réseaux.</li>
     <?php endif; ?>
+</ul>
 
     <li><strong>Points forts :</strong></li>
-    <?php foreach ($pointsForts as $pf): ?>
-        <li style="margin-left:20px;">✔️ <?= $pf ?></li>
-    <?php endforeach; ?>
+<?php foreach ($pointsForts as $pf): ?>
+    <li style="margin-left:20px; color: green;">✔️ <?= $pf ?></li>
+<?php endforeach; ?>
 
-    <li><strong>Points faibles :</strong></li>
-    <?php foreach ($pointsFaibles as $pf): ?>
-        <li style="margin-left:20px;">❗ <?= $pf ?></li>
-    <?php endforeach; ?>
+
+<li><strong>Points faibles :</strong></li>
+<?php foreach ($pointsFaibles as $pf): ?>
+    <li style="margin-left:20px; color: red;">❌ <?= $pf ?></li>
+<?php endforeach; ?>
+
 </ul>
 
 
