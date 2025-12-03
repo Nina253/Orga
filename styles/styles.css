@@ -295,6 +295,15 @@ line-height:1.6;
     height: auto;
     max-width: 500px;
 }
+
+/* ou #page_accueil {
+    width: 40%;        
+    float: right;      
+    height: auto;      
+    margin-left: 20px; 
+    margin-top: 100px; } */
+
+
 .c{
 	text-align:center;
 	/* Ici tu peux modifier si tu le souhaites tes informations personnelles */
