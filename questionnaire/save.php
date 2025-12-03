@@ -6,7 +6,7 @@ $response = ['success' => false, 'message' => 'Erreur inconnue.'];
 
 try {
 
-    require 'bd.php';
+    require '../bd.php';
     
     $bdd=getBD(); 
 
