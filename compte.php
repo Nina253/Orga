@@ -21,10 +21,11 @@
 
     <div class="profile">
         <img src="<?php echo $_SESSION['client']['url']?>" alt="perso">
-        <h1 id="hcompte" style='font-family: "Montserrat"'>Bienvenue<?php echo', '.$_SESSION['prenom']; ?></h1>
+        <h1 id="hcompte" style='font-family: "Montserrat"'>Bienvenue <?php echo$_SESSION['prenom']; ?></h1>
         
     </div>
-<p id="qstf" class="subtitle">Que souhaites-tu faire ?</p>
+        <p id="qstf" class="subtitle">Que souhaites-tu faire ?</p>
+
     <div class="content">
         
         <div class="left">
