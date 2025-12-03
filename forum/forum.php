@@ -55,16 +55,16 @@
      $.post("ajouter_commentaire.php", { id_sujet: id_sujet, contenu: contenu }, function(rep){
         if(rep.success){
 
-            // ➤ 1 : Ouvrir la zone des commentaires si elle est fermée
+            //  1 : Ouvrir la zone des commentaires si elle est fermée
             const zone = $('#commentaires-' + id_sujet);
             if(!zone.is(':visible')){
                 zone.show();
             }
 
-            // ➤ 2 : Ajouter le nouveau commentaire
+            //  2 : Ajouter le nouveau commentaire
             $('#liste-com-' + id_sujet).prepend(rep.html);
 
-            // ➤ 3 : Vider le champ
+            //  3 : Vider le champ
             $('#txt-com-' + id_sujet).val('');
         } else {
             alert(rep.message);
@@ -92,19 +92,19 @@ function envoyerCommentaire(event, id_sujet){
 
             if(rep.success){
 
-                // 🔥 Afficher message comme pour l’ajout d’un sujet
+                //  Afficher message comme pour l’ajout d’un sujet
                 $('#msg-com-' + id_sujet)
                     .css({color:'green'})
                     .text("Commentaire ajouté !");
 
-                // 💬 Ajouter le commentaire directement
+                //  Ajouter le commentaire directement
                 $('#liste-com-' + id_sujet).prepend(rep.html);
                 $('#nb-com-' + id_sujet).text(rep.nb_com);
 
-                // 🧹 Vider le champ
+                //  Vider le champ
                 input.val('');
 
-                // ⏱️ Effacer le message après 1 sec
+                //  Effacer le message après 1 sec
                 setTimeout(()=> $('#msg-com-' + id_sujet).text(""), 1000);
 
             } else {
@@ -132,7 +132,7 @@ function supprimerCommentaire(id_com, id_sujet){
             // supprimer du DOM
             $('#com-' + rep.id_com).remove();
 
-            // 🔢 actualiser compteur
+            //  actualiser compteur
             $('#nb-com-' + id_sujet).text(rep.nb_com);
 
         } else {
@@ -149,7 +149,7 @@ function supprimerSujet(id_sujet){
         return;
     }
 
-    // 🔒 Fermer zone commentaires AVANT suppression
+    // Fermer zone commentaires AVANT suppression
     $('#commentaires-' + id_sujet).hide();
 
     $.post("supprimer_sujet.php", { id_sujet: id_sujet }, function(rep){
