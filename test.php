@@ -1,4 +1,26 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require "bd.php";
+$bdd = getBd();
+
+if (!isset($_SESSION['client']['id'])) {
+    header("Location: home.php");
+    exit;
+}
+
+$questionnaire_fait = False;
+try{
+$stmt = $bdd->prepare("SELECT COUNT(*) AS nb_reponses FROM habitudes WHERE id_etu = :id_etu AND DATE(date_hab) = CURDATE()");
+$stmt->execute(['id_etu' => $_SESSION['client']['id']]);
+$resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+$nombre_de_reponses = (int)$resultat['nb_reponses'];
+if ($nombre_de_reponses > 0) {
+            $questionnaire_fait = true;}
+}catch(PDOException $e) {
+    error_log("Erreur d'exécution de la requête : " . $e->getMessage());
+
+}
+        
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -116,13 +138,86 @@
         .success { color: #388e3c; font-weight: bold; text-align: center; font-size: 1.5em;}
         #progress { text-align: center; position: fixed; top: 10px; left:0; right:0; color: #666; font-size: 1.2em;}
         #status-message { text-align: center; margin-top: 20px; min-height: 30px;}
+        /* --- Styles de la Modale --- */
+        #modal-warning {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Assure que la modale est au-dessus de tout */
+        }
+
+        #modal-content {
+            background: linear-gradient(to right,#5BA2FF,#C6FF8F );
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            font-family: 'Kalam', cursive;
+            transform: scale(0.95);
+            transition: transform 0.3s ease-out;
+        }
+
+        #modal-content h2 {
+            color: #d32f2f;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        #modal-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #modal-buttons button {
+            
+            width: 45%;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: none; /* Simplifie le style des boutons modaux */
+            transition: background-color 0.2s;
+            transform: none;
+        }
+
+        #modal-cancel {
+            background-color: #90a4ae;
+        }
+        #modal-cancel:hover {
+            background-color: #78909c;
+        }
+
+        #modal-confirm {
+            background-color: #d32f2f;
+        }
+        #modal-confirm:hover {
+            background-color: #b71c1c;
+        }
     </style>
 </head>
 <body>
 
-    <?php if(file_exists('navbar.php')) include 'navbar.php'; ?>
+    <?php // include 'navbar.php'; ?>
 
     <div id="progress">Chargement...</div>
+
+    <div id="modal-warning" style="display: none;">
+    <div id="modal-content">
+        <h2>Attention !</h2>
+        <p>Vous avez déjà rempli ce questionnaire aujourd'hui.</p>
+        <p>Si vous CONTINUER vous modifirais les données actuelles</p>
+        <div id="modal-buttons">
+            <button id="modal-cancel">Annuler</button>
+            <button id="modal-confirm" class="red-btn">Continuer</p>
+        </div>
+    </div>
+</div>
 
     <div id="question-container">
         <div class="qblock" id="postit">
@@ -138,12 +233,14 @@
     <div id="status-message"></div>
 
     <script>
+        const questionnaire_fait = <?php echo json_encode($questionnaire_fait); ?>;
         let questionsList = [];
         let currentIndex = 0;
         let responses = {};
-
-        $(document).ready(function() {
-            $.ajax({
+        function startQuestionnaire() {
+                $('#question-container').show();
+                $('#modal-warning').hide();
+                $.ajax({
                 url: 'question.json',
                 method: 'GET',
                 dataType: 'json',
@@ -160,6 +257,28 @@
                     $('#question-text').text("Erreur : Impossible de charger question.json");
                     $('#progress').text("");
                 }
+            });
+        }
+            
+
+        $(document).ready(function() {
+            $('#question-container').hide();
+            $('#progress').text(""); 
+            //POP UP
+            if (questionnaire_fait === true) {
+                $('#modal-warning').show();
+                
+            } else {
+                startQuestionnaire();
+            }
+
+
+            $('#modal-confirm').on('click', function() {
+                startQuestionnaire();
+            });
+
+            $('#modal-cancel').on('click', function() {
+                window.location.href = 'compte.php'; 
             });
         });
 
@@ -207,7 +326,6 @@
 
             responses[qName] = val; 
 
-            // ANIMATION
             $('#postit').addClass('fly-away');
 
             setTimeout(function() {
@@ -225,6 +343,7 @@
             $('#question-container').hide();
             $('#progress').hide();
             $('#status-message').html("Enregistrement...").css('color', '#d32f2f');
+            responses['questionnaire_fait'] = questionnaire_fait;
 
             $.ajax({
                 url: 'save.php',
