@@ -9,6 +9,13 @@ $bdd=getBD();
 $hab= $bdd->prepare("SELECT duree_sommeil , date_hab ,duree_reseaux FROM habitudes WHERE id_etu = ?");
 $hab->execute([$_SESSION['client']['id']]);
 $boulot = $hab->fetchAll(PDO::FETCH_ASSOC);
+
+$boulot = array_filter($boulot, function($row) {
+    return !empty($row['duree_sommeil']) 
+        || !empty($row['duree_reseaux']) 
+        || !empty($row['date_hab']);
+});
+
 $dates = [];
 $duree_sommeil = [];
 $duree_reseaux = [];
@@ -16,7 +23,7 @@ $duree_reseaux = [];
 foreach ($boulot as $row) {
     $dates[] = $row['date_hab'];
     $duree_sommeil[] = (float)$row['duree_sommeil'];
-    $duree_reseaux[] = (float)$row['duree_reseaux']; // force conversion en nombre
+    $duree_reseaux[] = (float)$row['duree_reseaux'];
 }
 
 // Calcul des évolutions
@@ -80,9 +87,11 @@ if ($evoSommeil < 0) {
 </head>
 <body>
     <?php include '../navbar.php'; ?>
-    <h1 style='font-family: "Montserrat"''>Tableau de bord</h1> 
+    <h1 style='font-family: "Montserrat"'>Tableau de bord</h1> 
     <p style='font-family: serif; font-size: 20px; color: grey; text-align : center; word-spacing: 4px;'>Suis ton évolution personnelle au cours du temps sur ce tableau de bord</p> 
     <br> 
+    <?php if (!empty($dates)){ ;?>
+
     <h2 style='font-family: "Arial Rounded MT Bold", sans-serif; text-decoration: underline;'> Graphiques d'évolution :</h2>
 
 <div class="barre4">
@@ -151,7 +160,7 @@ if ($evoSommeil < 0) {
         <strong>Points faibles :</strong>
         <ul class="result-list">
             <?php foreach ($pointsFaibles as $pf): ?>
-                <li style="color: red;">❌ <?= $pf ?></li>
+                <li style="color: red;"> <?= $pf ?></li>
             <?php endforeach; ?>
         </ul>
 
@@ -171,6 +180,13 @@ if ($evoSommeil < 0) {
         <?php endif; ?>
     </ul>
 
+    <?php }else{; ?>
+
+        <p> Aucune données n'a été enregister</p>
+         <p> Veillez repondre au questionnaire</p>
+        <a href = "../questionnaire/questionnaire_v2.php" ><div class='bloc'> Questionnaire </div> </a>
+
+        <?php }; ?>
 </div>
 
 <script>
