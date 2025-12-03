@@ -126,7 +126,7 @@ if ($evoSommeil < 0) {
 
 
         <?php if ($evoReseaux !== null): ?>
-            <?php $colorReseaux = $evoReseaux < 0 ? "red" : ($evoReseaux > 0 ? "green" : "black"); ?>
+            <?php $colorReseaux = $evoReseaux < 0 ? "green" : ($evoReseaux > 0 ? "red" : "black"); ?>
             <li>
                 Ton temps sur les réseaux a évolué de 
                 <strong style="color: <?= $colorReseaux ?>;">
