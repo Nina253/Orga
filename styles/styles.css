@@ -286,22 +286,23 @@ line-height:1.6;
     margin: 20px;
     text-align:center;
 }
-#page_accueil {
-    position: fixed;   /* reste fixe même en scroll */
-    top: 50%;          /* centre verticalement */
-    right: 5%;          /* colle à droite */
+/* ou #page_accueil {
+    position: fixed;   
+    top: 50%;         
+    right: 5%;     
     transform: translateY(-40%);
     width: 40%;
     height: auto;
     max-width: 500px;
-}
+} */
 
-/* ou #page_accueil {
+#page_accueil {
     width: 40%;        
     float: right;      
     height: auto;      
     margin-left: 20px; 
-    margin-top: 100px; } */
+    margin-top: 100px; 
+}
 
 
 .c{
@@ -507,6 +508,8 @@ margin-bottom: 30px;
 .sliders label {
   font-weight: 500;
   margin-bottom: 0.3rem;
+  font-family: serif; 
+  font-size:20px;
 }
 
 .scale {
@@ -635,6 +638,7 @@ margin-bottom: 30px;
   font-family: serif; 
   font-size: 20px;
   text-align: center;
+  color : grey;
 }
 
 
