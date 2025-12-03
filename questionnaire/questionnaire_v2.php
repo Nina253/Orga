@@ -43,7 +43,7 @@ if ($nombre_de_reponses > 0) {
     <div id="modal-content">
         <h2>Attention !</h2>
         <p>Vous avez déjà rempli ce questionnaire aujourd'hui.</p>
-        <p>Si vous CONTINUER vous modifirais les données actuelles</p>
+        <p>Si vous CONTINUEZ, vous modifierez les données actuelles.</p>
         <div id="modal-buttons">
             <button id="modal-cancel">Annuler</button>
             <button id="modal-confirm" class="red-btn">Continuer</p>
