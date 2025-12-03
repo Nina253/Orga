@@ -104,68 +104,74 @@ if ($evoSommeil < 0) {
 
 <br></br>
 <div id='bloc_tab'> <a href='info_detaille.php'>Accéder aux details</a></div>
-<br></br>
-<h2 style='font-family: "Arial Rounded MT Bold", sans-serif; text-decoration: underline;'>Résultats :</h2>
+<div class="result-container">
 
-<ul style='font-family:"Liberation Serif"; font-size:18px;'>
+    <h2 style='font-family: "Arial Rounded MT Bold"; text-decoration: underline;'>
+        Résultats :
+    </h2>
 
-    <?php if ($evoSommeil !== null): ?>
-    <?php 
-        $colorSommeil = $evoSommeil < 0 ? "red" : ($evoSommeil > 0 ? "green" : "black");
-    ?>
-    <li>
-        Ton sommeil a évolué de 
-        <strong style="color: <?= $colorSommeil ?>;">
-            <?= $evoSommeil ?>%
-        </strong>.
-    </li>
-    <?php else: ?>
-        <li>Pas assez de données pour analyser ton sommeil.</li>
-    <?php endif; ?>
+    <ul class="result-list" style='font-family:"Liberation Serif"; font-size:18px;'>
 
-
-    <?php if ($evoReseaux !== null): ?>
-    <?php 
-        $colorReseaux = $evoReseaux < 0 ? "red" : ($evoReseaux > 0 ? "green" : "black");
-    ?>
-    <li>
-        Ton temps sur les réseaux a évolué de 
-        <strong style="color: <?= $colorReseaux ?>;">
-            <?= $evoReseaux ?>%
-        </strong>.
-    </li>
-    <?php else: ?>
-        <li>Pas assez de données pour analyser ton usage des réseaux.</li>
-    <?php endif; ?>
-</ul>
-
-    <li><strong>Points forts :</strong></li>
-<?php foreach ($pointsForts as $pf): ?>
-    <li style="margin-left:20px; color: green;">✔️ <?= $pf ?></li>
-<?php endforeach; ?>
+        <?php if ($evoSommeil !== null): ?>
+            <?php $colorSommeil = $evoSommeil < 0 ? "red" : ($evoSommeil > 0 ? "green" : "black"); ?>
+            <li>
+                Ton sommeil a évolué de 
+                <strong style="color: <?= $colorSommeil ?>;">
+                    <?= $evoSommeil ?>%
+                </strong>.
+            </li>
+        <?php else: ?>
+            <li>Pas assez de données pour analyser ton sommeil.</li>
+        <?php endif; ?>
 
 
-<li><strong>Points faibles :</strong></li>
-<?php foreach ($pointsFaibles as $pf): ?>
-    <li style="margin-left:20px; color: red;">❌ <?= $pf ?></li>
-<?php endforeach; ?>
+        <?php if ($evoReseaux !== null): ?>
+            <?php $colorReseaux = $evoReseaux < 0 ? "red" : ($evoReseaux > 0 ? "green" : "black"); ?>
+            <li>
+                Ton temps sur les réseaux a évolué de 
+                <strong style="color: <?= $colorReseaux ?>;">
+                    <?= $evoReseaux ?>%
+                </strong>.
+            </li>
+        <?php else: ?>
+            <li>Pas assez de données pour analyser ton usage des réseaux.</li>
+        <?php endif; ?>
 
-</ul>
+    </ul>
 
+    <div class="result-section">
 
-<h2 style='font-family: "Arial Rounded MT Bold", sans-serif; text-decoration: underline;'>Améliorations à prévoir :</h2>
+        <strong>Points forts :</strong>
+        <ul class="result-list">
+            <?php foreach ($pointsForts as $pf): ?>
+                <li style="color: green;">✔️ <?= $pf ?></li>
+            <?php endforeach; ?>
+        </ul>
 
-<ul style='font-family:"Liberation Serif"; font-size:18px;'>
-    <?php foreach ($ameliorations as $am): ?>
-        <li>➡️ <?= $am ?></li>
-    <?php endforeach; ?>
+        <strong>Points faibles :</strong>
+        <ul class="result-list">
+            <?php foreach ($pointsFaibles as $pf): ?>
+                <li style="color: red;">❌ <?= $pf ?></li>
+            <?php endforeach; ?>
+        </ul>
 
-    <?php if (empty($ameliorations)): ?>
-        <li>👍 Pour l’instant tout semble bien aller !</li>
-    <?php endif; ?>
-</ul>
-<br></br>
+    </div>
 
+    <h2 style='font-family: "Arial Rounded MT Bold"; text-decoration: underline;'>
+        Améliorations à prévoir :
+    </h2>
+
+    <ul class="result-list" style='font-family:"Liberation Serif"; font-size:18px;'>
+        <?php foreach ($ameliorations as $am): ?>
+            <li>➡️ <?= $am ?></li>
+        <?php endforeach; ?>
+
+        <?php if (empty($ameliorations)): ?>
+            <li>👍 Pour l’instant tout semble bien aller !</li>
+        <?php endif; ?>
+    </ul>
+
+</div>
 
 <script>
 const ctx1 = document.getElementById('myChart1').getContext('2d');
