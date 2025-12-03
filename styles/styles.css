@@ -641,11 +641,6 @@ margin-bottom: 30px;
   color : grey;
 }
 
-
-
-
-
-
                                                                 /* MON COMPTE */
 
 
@@ -889,6 +884,34 @@ form#formStat select:focus {
   padding-top: 80px;
 }
 
+.result-container {
+    width: 60%;
+    margin: 0 auto;       
+    padding: 20px;
+    line-height: 1.7;
+}
+
+.result-container h2 {
+    text-align: center;    
+    margin-top: 40px;
+}
+
+.result-section {
+    margin-bottom: 30px;
+}
+
+.result-section strong {
+    font-size: 20px;       
+}
+
+.result-list {
+    margin-left: 30px; 
+}
+
+.result-list li {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
 
 
 
