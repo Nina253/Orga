@@ -780,7 +780,7 @@ h1 {
     padding: 15px;         
 }
 chart-container{
-  background-color: #1f5bab;
+  background-color: var(--couleur-secondaire-bleu);
       width: 90%;
     height: 350px;
     margin: 60px auto;
