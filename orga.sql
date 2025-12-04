@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 27, 2025 at 02:05 PM
+-- Generation Time: Dec 04, 2025 at 09:34 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.3.1
 
@@ -3281,6 +3281,12 @@ ALTER TABLE `sujets`
 --
 ALTER TABLE `commentaires`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT for table `habitudes`
+--
+ALTER TABLE `habitudes`
+  MODIFY `id_hab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
 
 --
 -- AUTO_INCREMENT for table `sujets`
