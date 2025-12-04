@@ -182,8 +182,8 @@ if ($evoSommeil < 0) {
 
     <?php }else{; ?>
 
-        <p> Aucune données n'a été enregister</p>
-         <p> Veillez repondre au questionnaire</p>
+        <p> Aucunes données n'a été enregistrées</p>
+         <p> Veuillez répondre au questionnaire</p>
         <a href = "../questionnaire/questionnaire_v2.php" ><div class='bloc'> Questionnaire </div> </a>
 
         <?php }; ?>

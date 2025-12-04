@@ -27,7 +27,7 @@ if ($nombre_de_reponses > 0) {
     <meta charset="UTF-8">
     <title>Questionnaire Post-it</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="style_questionnaire.css" type="text/css" media="screen" > 
+    <link rel="stylesheet" href="../styles/style_questionnaire.css" type="text/css" media="screen" > 
 
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     
@@ -185,7 +185,7 @@ if ($nombre_de_reponses > 0) {
                 dataType: 'json',
                 success: function(res) {
                     if (res.success) {
-                        $('#status-message').html("<h2 class='success'>✅ Réponses enregistrées!</h2>");
+                        $('#status-message').html("<h2 class='success'> Réponses enregistrées!</h2>");
                         window.location.href = '../tableau_de_bord/';
                     } else {
                         $('#status-message').html("<h2 class='error'>Erreur : " + res.message + "</h2>");
