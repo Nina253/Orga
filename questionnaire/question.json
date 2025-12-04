@@ -2,7 +2,7 @@
     { 
         "id": 1, 
         "name": "duree_travail", 
-        "texte": "Combien de temps, en heures, travailles-tu par jour ?", 
+        "texte": "Combien de temps, en heures, as-tu travaillé aujourd'hui ?", 
         "type": "nombre", 
         "min": 0, "max": 10, "step": 0.1 
     },
