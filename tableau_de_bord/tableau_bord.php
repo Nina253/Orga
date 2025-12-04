@@ -196,7 +196,7 @@ new Chart(ctx1, {
     data: {
         labels: <?php echo json_encode($dates); ?>,
         datasets: [{
-            label: "Temps de travail (h)",
+            label: "Temps de sommeil (h)",
             data: <?php echo json_encode($duree_sommeil); ?>.map(Number),
             borderColor: "blue",
             fill: true,
@@ -236,7 +236,7 @@ new Chart(ctx2, {
     data: {
         labels: <?php echo json_encode($dates); ?>,
         datasets: [{
-            label: "Temps de travail (h)",
+            label: "Temps sur les réseaux (h)",
             data: <?php echo json_encode($duree_reseaux); ?>.map(Number),
             borderColor: "blue",
             fill: true,
