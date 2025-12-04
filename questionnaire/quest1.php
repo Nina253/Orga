@@ -19,7 +19,7 @@
 		require '../bd.php';
 		$bdd=getBD(); 
 		$rep= $bdd->prepare("UPDATE etudiant SET nom=?,prenom=?,age=?,genre=?,niveau_educ_parents=? WHERE mail=?");
-		$rep->execute([$nom,$prenom,age($date),$genre,$niv,$_SESSION['mail']]);
+		$rep->execute([htmlspecialchars($nom),htmlspecialchars($prenom),age($date),$genre,$niv,$_SESSION['mail']]);
 		echo '<meta http-equiv="refresh" content="0;../compte.php"/>';
 	} else{
 		echo '<meta http-equiv="refresh" content="0;questionnaire_nom.php"/>';

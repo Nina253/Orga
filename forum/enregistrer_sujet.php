@@ -28,7 +28,7 @@ if ($titre === '' || $contenu === '') {
 
 // Insertion
 $stmt = $bdd->prepare("INSERT INTO sujets (titre, contenu, id_etu, date_creation) VALUES (?, ?, ?, NOW())");
-$stmt->execute([$titre, $contenu, $id_etu]);
+$stmt->execute([htmlspecialchars($titre), htmlspecialchars($contenu), $id_etu]);
 
 echo json_encode(['success'=>true, 'message'=>'Sujet publié avec succès !']);
 ?>

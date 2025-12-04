@@ -22,7 +22,7 @@ if ($id_sujet <= 0 || $contenu === '') {
 
 // Insertion
 $stmt = $bdd->prepare("INSERT INTO commentaires (sujet_id, id_etu, contenu, date_post) VALUES (?, ?, ?, NOW())");
-$stmt->execute([$id_sujet, $id_etu, $contenu]);
+$stmt->execute([$id_sujet, $id_etu, htmlspecialchars($contenu)]);
 
 // ID du commentaire inséré
 $id_commentaire = $bdd->lastInsertId();
