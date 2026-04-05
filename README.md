@@ -44,11 +44,12 @@ Un espace communautaire pour échanger des astuces, poser des questions sur l'or
 
 Notre démarche a été structurée pour répondre aux besoins réels des utilisateurs :
 
-1.  **Personas :** * **Romain (Primaire) :** Étudiant en informatique cherchant à retrouver de la discipline.
+1.  **Personas :**
+    * **Romain (Primaire) :** Étudiant en informatique cherchant à retrouver de la discipline.
     * **Anne (Secondaire) :** Mère de famille souhaitant accompagner ses enfants.
     * **Pierre (Anti-persona) :** Profil déjà très organisé (hors cible).
-2.  **StoryMap :** Découpage en *User Stories* pour prioriser le développement des fonctionnalités essentielles (MVP).
-3.  **Architecture des données :** Conception d'un MCD évolutif pour gérer les interactions complexes du forum et le suivi des habitudes.
+3.  **StoryMap :** Découpage en *User Stories* pour prioriser le développement des fonctionnalités essentielles (MVP).
+4.  **Architecture des données :** Conception d'un MCD évolutif pour gérer les interactions complexes du forum et le suivi des habitudes.
 
 ---
 
