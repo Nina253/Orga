@@ -63,6 +63,7 @@ Nous avons itéré sur notre modèle de données pour garantir fluidité et séc
 ### Base de données   
 
 Nous utilisons un jeu de données issu de [Kaggle](https://www.kaggle.com/datasets/adilshamim8/education-and-career-success) comprenant 18 variables (Score SAT, genre, stages, etc.) pour nourrir nos algorithmes de comparaison et de simulation.
+
 ---
 
 ## Sécurité & Performance
