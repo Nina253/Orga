@@ -58,11 +58,11 @@ Notre démarche a été structurée pour répondre aux besoins réels des utilis
 Nous avons itéré sur notre modèle de données pour garantir fluidité et sécurité.
 
 ### Modèle Conceptuel de Données (MCD)
-![MCD du projet]([LIEN_IMAGE_MCD])
+![MCD Orga+](MCD.png)
 
-### Intégration Data
-Nous utilisons un jeu de données issu de **Kaggle** comprenant 18 variables (Score SAT, Genre, Stages, Vie personnelle, etc.) pour nourrir nos algorithmes de comparaison et de simulation.
-(https://www.kaggle.com/datasets/adilshamim8/education-and-career-success)
+### Base de données   
+
+Nous utilisons un jeu de données issu de [Kaggle](https://www.kaggle.com/datasets/adilshamim8/education-and-career-success) comprenant 18 variables (Score SAT, genre, stages, etc.) pour nourrir nos algorithmes de comparaison et de simulation.
 ---
 
 ## Sécurité & Performance
